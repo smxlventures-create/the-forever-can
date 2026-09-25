@@ -369,8 +369,8 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .nav-open .menu-toggle { color: var(--ink); background: var(--sun); }
   .nav-open { overflow: hidden; }
   .brand { width: var(--wordmark-header-width-mobile); }
-  .home-cover, .match-hero, .shop-hero, .story-hero, .pdp-cover, .collection-shot, .flip-story, .about-split, .contact-grid, .cart-checkout, .pdp-specs, .cart-hero { grid-template-columns: 1fr; }
-  .cover-image, .match-hero-photo, .shop-hero figure, .story-hero figure, .collection-shot figure, .about-split figure { min-height: 52svh; border-right: 0; border-bottom: var(--line); }
+  .home-cover, .match-hero, .shop-hero, .story-hero, .pdp-cover, .collection-shot, .flip-story, .about-split, .contact-grid, .cart-checkout, .pdp-specs, .cart-hero { grid-template-columns: 1fr; min-height: 0; height: auto; }
+  .cover-image, .match-hero-photo, .shop-hero figure, .story-hero figure, .collection-shot figure, .about-split figure { min-height: 42svh; border-right: 0; border-bottom: var(--line); overflow: hidden; }
   .cover-type, .match-hero-copy, .shop-hero-copy, .story-hero > div, .pdp-title { padding: 1.6rem 1.1rem 2.2rem; border-right: 0; }
   .cover-type h1, .match-hero-copy h1, .shop-hero h1, .story-hero h1, .page-hero h1, .pdp-title h1 { font-size: clamp(2.8rem,13vw,5rem); }
   .howto-band > header, .pattern-teaser header, .ig-band header { grid-template-columns: 1fr; padding-left: 1.1rem; padding-right: 1.1rem; }
@@ -400,17 +400,23 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .facts, .shop-strip, .how-steps, .howto-kit, .ig-strip, .hero-actions { grid-template-columns: 1fr; }
   .facts div, .shop-strip div, .howto-kit article { border-right: 0; border-bottom: var(--line); }
   .match-hero { min-height: 0; }
-  .match-hero-photo { min-height: 36svh; max-height: 38svh; }
-  .match-hero-photo figcaption { grid-template-columns: 1fr; gap: .25rem; left: .7rem; right: .7rem; bottom: .7rem; }
-  .match-hero-copy { padding: 1rem 1rem 1.2rem; }
-  .match-hero-copy h1 { margin: .45rem 0 .7rem; }
-  .cover-note { font-size: 1rem; line-height: 1.35; }
-  .hero-actions { margin-top: 1rem; }
+  .match-hero-photo { height: 30svh; min-height: 30svh; max-height: 30svh; overflow: hidden; }
+  .match-hero-photo img { height: 30svh; }
+  .match-hero-photo figcaption { grid-template-columns: 1fr auto; gap: .35rem; left: .7rem; right: .7rem; bottom: .55rem; }
+  .match-hero-copy { padding: .85rem 1rem 1rem; }
+  .match-hero-copy h1 { margin: .35rem 0 .55rem; font-size: clamp(2.4rem, 14vw, 3.2rem); }
+  .cover-note { font-size: .98rem; line-height: 1.32; }
+  .hero-actions { margin-top: .85rem; }
   .leftover-roll { top: .7rem; right: .7rem; width: 78px; }
   .ig-strip { grid-template-columns: 1fr 1fr; }
   .sticky-buy { padding-left: .75rem; padding-right: .75rem; }
   .shop-grid { margin: .75rem; }
+  .page-hero { min-height: 0; padding: 2.2rem 1rem 1.8rem; }
   .page-hero h1 { font-size: clamp(2.7rem,16vw,4.2rem); }
+  .shop-page .shop-hero figure, .howto-page .story-hero figure { min-height: 28svh; max-height: 28svh; }
+  .shop-page .shop-hero-copy, .howto-page .story-hero > div { padding: 1.15rem 1rem 1.25rem; }
+  .shop-page .shop-hero h1, .howto-page .story-hero h1 { font-size: clamp(2.4rem, 13vw, 3.4rem); }
+  .shop-strip { display: none; }
 }
 
 @media (min-width: 901px) {
