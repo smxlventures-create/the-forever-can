@@ -215,7 +215,7 @@ figcaption { padding-top: .7rem; font: 500 .65rem "DM Mono", monospace; color: v
 
 .match-hero { display: grid; grid-template-columns: 58% 42%; min-height: calc(100svh - 104px); border-bottom: var(--line); background: var(--pink); }
 .match-hero-photo { position: relative; min-height: 62svh; margin: 0; background: var(--ink); }
-.match-hero-photo img { height: 100%; object-fit: cover; object-position: 68% 48%; }
+.match-hero-photo img { height: 100%; object-fit: cover; object-position: 12% 78%; }
 .match-hero-photo figcaption { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; padding: .75rem .85rem; display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; background: var(--white); border: var(--line); font: 500 .62rem "DM Mono", monospace; color: var(--ink); }
 .match-hero-photo figcaption b { text-align: center; }
 .match-hero-copy { padding: clamp(2rem,5vw,6rem) clamp(1.1rem,4vw,4rem); display: flex; flex-direction: column; justify-content: center; }
@@ -263,7 +263,7 @@ figcaption { padding-top: .7rem; font: 500 .65rem "DM Mono", monospace; color: v
 
 .filter-bar { padding: 1rem 4vw; display: grid; gap: .8rem; border-bottom: var(--line); background: var(--paper); position: sticky; top: 64px; z-index: 30; }
 .filter-chips { display: flex; flex-wrap: wrap; gap: .45rem; }
-.chip { min-height: 44px; padding: 0 .9rem; border: var(--line); border-radius: 999px; background: var(--white); font: 500 .68rem "DM Mono", monospace; text-transform: capitalize; cursor: pointer; }
+.chip { min-height: 44px; padding: 0 .9rem; border: var(--line); border-radius: 999px; background: var(--white); font: 500 .68rem "DM Mono", monospace; text-transform: none; cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--white); }
 
 .shop-card-image { display: block; }

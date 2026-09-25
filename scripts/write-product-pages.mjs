@@ -26,7 +26,16 @@ const retired = [
   'atelier-stripe',
   'fern-conservatory',
   'calacatta-stone',
-  'midnight-toile'
+  'midnight-toile',
+  'chinoiserie-blue-bird',
+  'botanical-fern',
+  'geometric-deco',
+  'tropical-palm',
+  'indigo-vine',
+  'ink-toile',
+  'marble-vein',
+  'soft-stripe',
+  'garden-rose'
 ];
 
 for (const slug of retired) {

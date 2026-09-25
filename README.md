@@ -17,9 +17,11 @@ Clear acrylic cylindrical wastebasket + interchangeable metal insert (nickel or 
 
 ## Catalog
 
-`src/data/products.json` is a **wallpaper pattern shop** (`shop`, `howItWorks`, `patterns[]`). Each card is “Forever Can in [Pattern Name]” — a lookbook wrap, not a separate SKU. Price stays $59.95. Checkout deep-links the live Etsy listing. Nickel vs gold is an Etsy finish choice, not a product.
+`src/data/products.json` is a **wallpaper pattern shop** (`shop`, `howItWorks`, `patterns[]`). Each card is “Forever Can — [Pattern Name]” — a lookbook wrap, not a nickel/gold/DIY variant. Price stays $59.95. Checkout deep-links the live Etsy listing.
 
-Pattern fields: `slug`, `name`, `mood`, `style`, `rooms`, `colors`, `description`, `images`, `patternTile`, `campaignSlot`.
+Pattern fields: `slug`, `name`, `title`, `mood`, `style`, `rooms`, `colors`, `description`, `images`, `patternTile`, `source`.
+
+Primary lifestyle stills live in `public/images/ig/` (grey botanical, koi, banana leaf, dark floral, fan palm, hydrangea, blue palm, feathers, paisley, plus retail shelves). Higgsfield fills cover chinoiserie / blush damask / botanical / geometric / tropical.
 
 ## Imagery drop-in
 
@@ -31,11 +33,12 @@ Drop replacements here — see [`public/images/README.md`](public/images/README.
 
 | File | Use |
 | --- | --- |
-| `hero-match-wall.jpg` | Home hero (leftover roll + matching can) — **in repo** |
-| `hero-before-after.jpg` | How-it-works value prop — **in repo** |
-| `shop-*.jpg` | Pattern campaign stills — **in repo** |
-| `etsy-product-1.jpg` / `etsy-product-2.jpg` | Live Etsy kit / template — **in repo** |
-| `ig-01.jpg` … `ig-06.jpg` | Instagram strip. Update the list in `src/main.js`. |
+| `ig/lifestyle-banana-leaf.jpg` | Home hero — leftover wallpaper, matching can |
+| `ig/lifestyle-grey-botanical.jpg` | How-it-works / value shot |
+| `ig/lifestyle-*.jpg` | Pattern PDPs + shop cards |
+| `ig/retail-shelf-patterns-*.jpg` | Swap-anytime / Instagram strip |
+| `shop-*.jpg` | Higgsfield fill cards |
+| `etsy-product-2.jpg` | Live Etsy cutting template |
 
 ## Run
 

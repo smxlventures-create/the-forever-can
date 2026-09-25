@@ -1,6 +1,6 @@
 import './styles.css';
 import './site-shell.js';
-import { patterns, shop, styles } from './products.js';
+import { patterns, shop, styleLabels, styles } from './products.js';
 import { patternCard } from './markup.js';
 import { addToCart } from './cart.js';
 
@@ -28,7 +28,7 @@ function render() {
 if (chips) {
   const labels = [
     { id: 'all', label: 'All looks' },
-    ...styles.map((style) => ({ id: style, label: style }))
+    ...styles.map((style) => ({ id: style, label: styleLabels[style] || style }))
   ];
   chips.innerHTML = labels
     .map(

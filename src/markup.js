@@ -38,7 +38,7 @@ export function patternCard(pattern, { compact = false } = {}) {
     </a>
     <div class="shop-card-copy">
       <p class="utility">${pattern.style.toUpperCase()} / ${escapeHtml(roomsOf(pattern).toUpperCase())}</p>
-      <h2>${escapeHtml(pattern.title.toUpperCase())}</h2>
+      <h2>${escapeHtml((pattern.title || `Forever Can — ${pattern.name}`).toUpperCase())}</h2>
       <p>${escapeHtml(compact ? pattern.story : pattern.description)}</p>
       <p class="lookbook-note">${escapeHtml(shop.lookbookNote)}</p>
       <div class="shop-card-buy">
