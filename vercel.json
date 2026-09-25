@@ -1,4 +1,34 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/products/the-forever-can", "destination": "/shop/", "permanent": true },
+    { "source": "/products/brushed-nickel", "destination": "/shop/", "permanent": true },
+    { "source": "/products/gold-finish", "destination": "/shop/", "permanent": true },
+    { "source": "/products/custom-diy", "destination": "/how-it-works/", "permanent": true },
+    { "source": "/products/art-photos", "destination": "/how-it-works/", "permanent": true },
+    { "source": "/products/seasonal-holiday", "destination": "/how-it-works/", "permanent": true },
+    { "source": "/products/palm-aviary", "destination": "/products/banana-leaf/", "permanent": true },
+    { "source": "/products/tropical-palm", "destination": "/products/banana-leaf/", "permanent": true },
+    { "source": "/products/tropical", "destination": "/products/banana-leaf/", "permanent": true },
+    { "source": "/products/sage-chinoiserie", "destination": "/products/koi-harmony/", "permanent": true },
+    { "source": "/products/chinoiserie-blue-bird", "destination": "/products/koi-harmony/", "permanent": true },
+    { "source": "/products/chinoiserie", "destination": "/products/koi-harmony/", "permanent": true },
+    { "source": "/products/fern-conservatory", "destination": "/products/grey-botanical/", "permanent": true },
+    { "source": "/products/botanical-fern", "destination": "/products/grey-botanical/", "permanent": true },
+    { "source": "/products/botanical", "destination": "/products/grey-botanical/", "permanent": true },
+    { "source": "/products/cobalt-lattice", "destination": "/products/lattice/", "permanent": true },
+    { "source": "/products/geometric-deco", "destination": "/products/sunburst/", "permanent": true },
+    { "source": "/products/geometric", "destination": "/products/lattice/", "permanent": true },
+    { "source": "/products/indigo-vine", "destination": "/products/banana-leaf/", "permanent": true },
+    { "source": "/products/ink-toile", "destination": "/shop/", "permanent": true },
+    { "source": "/products/marble-vein", "destination": "/shop/", "permanent": true },
+    { "source": "/products/soft-stripe", "destination": "/shop/", "permanent": true },
+    { "source": "/products/garden-rose", "destination": "/products/hydrangea/", "permanent": true },
+    { "source": "/products/blush-damask", "destination": "/products/blue-damask/", "permanent": true },
+    { "source": "/products/fan-palm", "destination": "/products/sunburst/", "permanent": true },
+    { "source": "/products/blue-palm", "destination": "/products/banana-leaf/", "permanent": true },
+    { "source": "/products/feathers", "destination": "/products/tropical-silhouette/", "permanent": true },
+    { "source": "/products/paisley", "destination": "/products/blue-damask/", "permanent": true }
+  ]
 }

@@ -2,8 +2,8 @@ import { cartCount, subscribeCart } from './cart.js';
 
 const links = [
   { href: '/shop/', label: 'Shop' },
+  { href: '/how-it-works/', label: 'How-to' },
   { href: '/about/', label: 'About' },
-  { href: '/contact/', label: 'Contact' },
   { href: '/cart/', label: 'Cart' }
 ];
 
@@ -30,7 +30,9 @@ if (header) {
     nav.innerHTML = links
       .map(({ href, label }, index) => {
         const active =
-          currentPath === href || (href === '/shop/' && currentPath.startsWith('/products/'));
+          currentPath === href ||
+          (href === '/shop/' && currentPath.startsWith('/products/')) ||
+          (href === '/how-it-works/' && currentPath.startsWith('/how-it-works/'));
         return `<a href="${href}"${active ? ' aria-current="page"' : ''}><small>${String(index + 1).padStart(2, '0')}</small><span>${label}</span><i aria-hidden="true"></i></a>`;
       })
       .join('');
@@ -48,7 +50,7 @@ if (header) {
   const shopLink = header.querySelector('.header-tag');
   if (shopLink && !shopLink.hasAttribute('data-cart-count')) {
     shopLink.href = '/shop/';
-    shopLink.textContent = 'Shop the can ↗';
+    shopLink.textContent = 'Shop looks ↗';
   }
 
   const setMenu = (open, returnFocus = false) => {
@@ -73,7 +75,17 @@ if (header) {
 }
 
 document.querySelectorAll('.site-footer nav').forEach((nav) => {
-  nav.innerHTML = links.map(({ href, label }) => `<a href="${href}">${label.toUpperCase()}</a>`).join('');
+  const footer = [
+    ...links,
+    { href: '/contact/', label: 'Contact' },
+    { href: 'https://www.instagram.com/the_forever_can/', label: 'Instagram' }
+  ];
+  nav.innerHTML = footer
+    .map(({ href, label }) => {
+      const external = href.startsWith('http');
+      return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label.toUpperCase()}</a>`;
+    })
+    .join('');
 });
 
 refreshCartTags();

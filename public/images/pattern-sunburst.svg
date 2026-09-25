@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+  <rect width="180" height="180" fill="#efe6d6"/>
+  <g fill="none" stroke="#c4b49a" stroke-width="1.6">
+      <path d="M40 40 L90 90 L40 50"/>
+      <path d="M90 0 L90 90 L110 10"/>
+      <path d="M160 20 L90 90 L170 50"/>
+      <path d="M180 90 L90 90 L170 110"/>
+      <path d="M150 170 L90 90 L170 150"/>
+      <path d="M90 180 L90 90 L70 170"/>
+      <path d="M20 150 L90 90 L10 170"/>
+      <path d="M0 90 L90 90 L10 70"/>
+    </g>
+</svg>

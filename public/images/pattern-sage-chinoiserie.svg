@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+
+    <rect width="180" height="180" fill="#e6eee6"/>
+    <g fill="none" stroke="#5a7a6a" stroke-width="1.5">
+      <path d="M20 160 C40 110 50 80 90 40"/>
+      <path d="M90 40 C100 70 130 90 164 70"/>
+      <path d="M70 90 c8-14 18-12 22 2"/>
+      <path d="M118 78 c6-12 16-10 18 4"/>
+      <path d="M40 130 h20 v28 h-8 v-12 h-12 z" />
+      <path d="M44 130 l6-10 6 10"/>
+    </g>
+    <g fill="#5a7a6a">
+      <circle cx="92" cy="48" r="2.4"/>
+      <ellipse cx="64" cy="86" rx="7" ry="2.4"/>
+      <ellipse cx="132" cy="74" rx="6" ry="2.2"/>
+    </g>
+  
+</svg>

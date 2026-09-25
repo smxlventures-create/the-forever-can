@@ -1,6 +1,6 @@
 import './styles.css';
 import './site-shell.js';
-import { products, formatPrice, productUrl } from './products.js';
+import { products, formatPrice, productUrl, shop } from './products.js';
 import { cartLines, setQty, removeItem, getCart, subscribeCart } from './cart.js';
 
 const root = document.querySelector('#cart-root');
@@ -15,8 +15,8 @@ function render() {
       <section class="cart-empty">
         <p class="utility">CART / 00</p>
         <h1>NOTHING<br />IN THE CAN.</h1>
-        <p>The shop is six wallpaper wastebaskets. Add one, then check out through Etsy or send an inquiry.</p>
-        <a class="release-bar" href="/shop/"><span>OPEN THE SHOP</span><strong>SEE ALL SIX ↗</strong></a>
+        <p>The shop is wallpaper looks for one patented can. Add a look, then check out through Etsy.</p>
+        <a class="release-bar" href="/shop/"><span>OPEN THE PATTERN SHOP</span><strong>SEE THE LOOKS ↗</strong></a>
       </section>`;
     return;
   }
@@ -25,13 +25,13 @@ function render() {
     <section class="cart-hero">
       <div>
         <p class="utility">LOCAL CART / NO CARD KEYS</p>
-        <h1>YOUR<br />CANS.</h1>
-        <p>Purchase happens on Etsy, or send an inquiry with name, email, and shipping. Nothing is charged on this site.</p>
+        <h1>YOUR<br />LOOKS.</h1>
+        <p>Each line is a wallpaper look for The Forever Can. Purchase happens on Etsy — one listing, nickel or gold insert at checkout.</p>
       </div>
       <aside>
         <span>SUBTOTAL</span>
         <strong>${formatPrice(subtotal)}</strong>
-        <small>${lines.length} LINE${lines.length === 1 ? '' : 'S'}</small>
+        <small>${lines.length} LOOK${lines.length === 1 ? '' : 'S'}</small>
       </aside>
     </section>
     <section class="cart-lines" aria-label="Cart items">
@@ -40,9 +40,9 @@ function render() {
           (line) => `<article>
             <a href="${productUrl(line.product.slug)}"><img src="${line.product.images[0]}" alt="${line.product.title}" /></a>
             <div>
-              <p class="utility">${line.product.pattern.toUpperCase()}</p>
+              <p class="utility">${(line.product.style || line.product.pattern || '').toUpperCase()}</p>
               <h2>${line.product.title}</h2>
-              <p>${formatPrice(line.product.price)} each</p>
+              <p>${formatPrice(line.product.price || shop.price)} each</p>
             </div>
             <label>Qty <input type="number" min="1" max="12" value="${line.qty}" data-qty="${line.product.id}" /></label>
             <strong>${formatPrice(line.lineTotal)}</strong>
@@ -55,8 +55,8 @@ function render() {
       <div>
         <p class="utility">PATH 01</p>
         <h2>BUY ON<br />ETSY.</h2>
-        <p>Opens the matching Etsy listing for each line. That is the live storefront until an API key refreshes individual SKUs.</p>
-        <button type="button" class="solid-btn" id="etsy-checkout">OPEN ETSY LISTINGS ↗</button>
+        <p>Opens the live WallpaperWastebasket listing. Choose nickel or gold insert there. Looks are inspiration until custom SKUs exist.</p>
+        <button type="button" class="solid-btn" id="etsy-checkout">OPEN ETSY LISTING ↗</button>
       </div>
       <form id="inquire-form" class="inquire-form">
         <p class="utility">PATH 02</p>
@@ -65,7 +65,7 @@ function render() {
         <label>Name <input required name="name" autocomplete="name" /></label>
         <label>Email <input required type="email" name="email" autocomplete="email" /></label>
         <label>Shipping address <textarea required name="shipping" rows="3"></textarea></label>
-        <label>Note <textarea name="message" rows="3" placeholder="Pattern preference, leftover wallpaper, timing"></textarea></label>
+        <label>Note <textarea name="message" rows="3" placeholder="Wallpaper leftover, look preference, nickel or gold"></textarea></label>
         <button class="solid-btn" type="submit">SEND INQUIRY</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -78,8 +78,7 @@ function render() {
     button.addEventListener('click', () => removeItem(button.dataset.remove));
   });
   root.querySelector('#etsy-checkout')?.addEventListener('click', () => {
-    const urls = [...new Set(lines.map((line) => line.product.etsyUrl).filter(Boolean))];
-    urls.forEach((url) => window.open(url, '_blank', 'noopener'));
+    window.open(shop.etsyListing, '_blank', 'noopener');
   });
   root.querySelector('#inquire-form')?.addEventListener('submit', submitInquiry);
 }
@@ -94,7 +93,7 @@ async function submitInquiry(event) {
     slug: line.product.slug,
     title: line.product.title,
     qty: line.qty,
-    price: line.product.price
+    price: line.product.price || shop.price
   }));
   status.textContent = 'Sending…';
   try {

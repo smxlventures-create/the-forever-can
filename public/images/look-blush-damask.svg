@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img">
+
+  <defs>
+  <pattern id="p" width="160" height="160" patternUnits="userSpaceOnUse">
+    
+    <rect width="160" height="160" fill="#f4e4e8"/>
+    <g fill="none" stroke="#d4a5b0" stroke-width="2">
+      <path d="M80 16 C110 40 110 70 80 88 C50 70 50 40 80 16Z"/>
+      <path d="M80 88 C110 112 110 142 80 164 C50 142 50 112 80 88Z"/>
+      <path d="M16 80 C40 50 70 50 88 80 C70 110 40 110 16 80Z"/>
+      <path d="M88 80 C112 50 142 50 164 80 C142 110 112 110 88 80Z"/>
+    </g>
+    <circle cx="80" cy="80" r="6" fill="#f7d6e0"/>
+  
+  </pattern>
+</defs>
+  <rect width="900" height="1200" fill="url(#p)"/>
+  <rect x="0" y="980" width="900" height="220" fill="#f4e4e8"/>
+  <rect x="0" y="978" width="900" height="3" fill="#0d0d12"/>
+  <!-- leftover roll -->
+  <g transform="translate(70,820)">
+    <rect x="18" y="40" width="150" height="18" rx="4" fill="url(#p)" stroke="#0d0d12" stroke-width="2"/>
+    <ellipse cx="18" cy="49" rx="16" ry="22" fill="#d4a5b0" stroke="#0d0d12" stroke-width="2"/>
+    <ellipse cx="18" cy="49" rx="8" ry="12" fill="#f4e4e8"/>
+    <text x="40" y="88" fill="#0d0d12" font-family="ui-monospace, monospace" font-size="14">LEFTOVER ROLL</text>
+  </g>
+  <!-- can -->
+  <g transform="translate(310,250)">
+    <ellipse cx="140" cy="620" rx="128" ry="22" fill="#0d0d12" opacity=".18"/>
+    <path d="M28 90 L252 90 L230 620 L50 620 Z" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
+    <path d="M40 110 L240 110 L222 600 L58 600 Z" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>
+    <ellipse cx="140" cy="90" rx="116" ry="36" fill="#d4a5b0" stroke="#0d0d12" stroke-width="3"/>
+    <ellipse cx="140" cy="90" rx="88" ry="24" fill="#d7d3cc"/>
+    <ellipse cx="140" cy="90" rx="70" ry="18" fill="#8a8f96"/>
+    <text x="140" y="690" text-anchor="middle" fill="#0d0d12" font-family="Archivo Black, Impact, sans-serif" font-size="28" letter-spacing="-1">FOREVER CAN</text>
+    <text x="140" y="722" text-anchor="middle" fill="#0d0d12" font-family="ui-monospace, monospace" font-size="16">IN BLUSH DAMASK</text>
+  </g>
+  <rect x="36" y="36" width="828" height="54" fill="#fffdf8" stroke="#0d0d12" stroke-width="2"/>
+  <text x="56" y="72" font-family="ui-monospace, monospace" font-size="18" fill="#0d0d12">06  /  DAMASK  /  MATCH THE WALL</text>
+
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img">
+
+  <defs>
+  <pattern id="p" width="160" height="160" patternUnits="userSpaceOnUse">
+    
+    <rect width="160" height="160" fill="#e8efe4"/>
+    <g fill="none" stroke="#3d5c3a" stroke-width="1.6">
+      <path d="M80 150 C78 90 70 50 80 16"/>
+      <path d="M80 40 c-22 4-28 16-22 28 M80 60 c22 4 28 16 22 28"/>
+      <path d="M80 80 c-24 6-30 18-22 32 M80 100 c24 6 30 18 22 32"/>
+      <path d="M30 140 C28 90 18 70 14 40"/>
+      <path d="M130 20 C132 70 148 90 150 130"/>
+    </g>
+    <g fill="#3d5c3a" opacity=".35">
+      <ellipse cx="58" cy="54" rx="12" ry="5" transform="rotate(-20 58 54)"/>
+      <ellipse cx="104" cy="86" rx="12" ry="5" transform="rotate(22 104 86)"/>
+    </g>
+  
+  </pattern>
+</defs>
+  <rect width="900" height="1200" fill="url(#p)"/>
+  <rect x="0" y="980" width="900" height="220" fill="#e8efe4"/>
+  <rect x="0" y="978" width="900" height="3" fill="#0d0d12"/>
+  <!-- leftover roll -->
+  <g transform="translate(70,820)">
+    <rect x="18" y="40" width="150" height="18" rx="4" fill="url(#p)" stroke="#0d0d12" stroke-width="2"/>
+    <ellipse cx="18" cy="49" rx="16" ry="22" fill="#3d5c3a" stroke="#0d0d12" stroke-width="2"/>
+    <ellipse cx="18" cy="49" rx="8" ry="12" fill="#e8efe4"/>
+    <text x="40" y="88" fill="#0d0d12" font-family="ui-monospace, monospace" font-size="14">LEFTOVER ROLL</text>
+  </g>
+  <!-- can -->
+  <g transform="translate(310,250)">
+    <ellipse cx="140" cy="620" rx="128" ry="22" fill="#0d0d12" opacity=".18"/>
+    <path d="M28 90 L252 90 L230 620 L50 620 Z" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
+    <path d="M40 110 L240 110 L222 600 L58 600 Z" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>
+    <ellipse cx="140" cy="90" rx="116" ry="36" fill="#3d5c3a" stroke="#0d0d12" stroke-width="3"/>
+    <ellipse cx="140" cy="90" rx="88" ry="24" fill="#d7d3cc"/>
+    <ellipse cx="140" cy="90" rx="70" ry="18" fill="#8a8f96"/>
+    <text x="140" y="690" text-anchor="middle" fill="#0d0d12" font-family="Archivo Black, Impact, sans-serif" font-size="28" letter-spacing="-1">FOREVER CAN</text>
+    <text x="140" y="722" text-anchor="middle" fill="#0d0d12" font-family="ui-monospace, monospace" font-size="16">IN FERN CONSERVATORY</text>
+  </g>
+  <rect x="36" y="36" width="828" height="54" fill="#fffdf8" stroke="#0d0d12" stroke-width="2"/>
+  <text x="56" y="72" font-family="ui-monospace, monospace" font-size="18" fill="#0d0d12">10  /  BOTANICAL  /  MATCH THE WALL</text>
+
+</svg>

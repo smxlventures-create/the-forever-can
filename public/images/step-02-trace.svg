@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img">
+
+  <defs>
+  <pattern id="p" width="160" height="160" patternUnits="userSpaceOnUse">
+    
+    <rect width="160" height="160" fill="#f3e6e0"/>
+    <g fill="#c45a7a" opacity=".55">
+      <circle cx="40" cy="40" r="14"/>
+      <circle cx="52" cy="34" r="10"/>
+      <circle cx="34" cy="52" r="9"/>
+      <circle cx="120" cy="110" r="16"/>
+      <circle cx="134" cy="102" r="11"/>
+      <circle cx="112" cy="124" r="10"/>
+    </g>
+    <g fill="none" stroke="#6b7a5a" stroke-width="1.4">
+      <path d="M48 54 C60 80 70 90 88 120"/>
+      <path d="M124 120 C110 90 100 70 90 48"/>
+    </g>
+    <circle cx="88" cy="78" r="5" fill="#f7d6e0"/>
+  
+  </pattern>
+</defs>
+  
+      <rect width="640" height="420" fill="#ffd84d"/>
+      <rect x="70" y="50" width="360" height="240" fill="#fffdf8" stroke="#0d0d12" stroke-width="3"/>
+      <rect x="110" y="80" width="200" height="180" fill="none" stroke="#0d0d12" stroke-width="3" stroke-dasharray="8 6"/>
+      <path d="M320 250 L390 310" stroke="#0d0d12" stroke-width="4"/>
+      <circle cx="400" cy="322" r="10" fill="#0d0d12"/>
+      <text x="70" y="384" font-family="Archivo Black, sans-serif" font-size="36">TRACE THE TEMPLATE.</text>
+    
+
+</svg>

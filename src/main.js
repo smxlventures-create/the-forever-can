@@ -1,22 +1,46 @@
 import './styles.css';
 import './site-shell.js';
-import { products, formatPrice, productUrl } from './products.js';
+import { featuredPatterns, formatPrice, howItWorks, productUrl, shop } from './products.js';
+import { howStepsMarkup, instagramFrame } from './markup.js';
+import { addToCart } from './cart.js';
 
 const featured = document.querySelector('#featured-grid');
 if (featured) {
-  featured.innerHTML = products
-    .slice(0, 4)
+  featured.innerHTML = featuredPatterns(4)
     .map(
-      (product) => `<a class="color-card" href="${productUrl(product.slug)}" style="--card-light:${product.colors[0]};--card-dark:${product.colors[1]}">
+      (pattern) => `<a class="color-card" href="${productUrl(pattern.slug)}" style="--card-light:${pattern.colors[0]};--card-dark:${pattern.colors[1]}">
         <div class="color-photo">
-          <img src="${product.images[0]}" width="1254" height="1254" loading="lazy" decoding="async" alt="${product.title} wallpaper wastebasket" />
-          <span class="round-index">${product.index}</span>
+          <img src="${pattern.images[0]}" width="1254" height="1254" loading="lazy" decoding="async" alt="${pattern.title} wallpaper wastebasket" />
+          <span class="round-index">${pattern.index}</span>
         </div>
         <div class="color-name">
-          <span>${product.title.toUpperCase()}</span>
-          <b>${formatPrice(product.price)} / ${product.pattern.toUpperCase()} ↗</b>
+          <span>${pattern.name.toUpperCase()}</span>
+          <b>${formatPrice(pattern.price || shop.price)} / ${pattern.style.toUpperCase()} ↗</b>
         </div>
       </a>`
     )
     .join('');
 }
+
+const howBand = document.querySelector('#how-band');
+if (howBand) howBand.innerHTML = howStepsMarkup(howItWorks);
+
+const igStrip = document.querySelector('#ig-strip');
+if (igStrip) {
+  const frames = [
+    { src: '/images/ig/lifestyle-grey-botanical.jpg', alt: 'Grey botanical wall and matching Forever Can' },
+    { src: '/images/ig/lifestyle-banana-leaf.jpg', alt: 'Navy banana-leaf can beside a navy vanity' },
+    { src: '/images/ig/lifestyle-blue-damask.jpg', alt: 'Blue damask wallpaper and matching Forever Can' },
+    { src: '/images/ig/lifestyle-tropical-silhouette.jpg', alt: 'Monochrome tropical silhouette wrap' },
+    { src: '/images/ig/lifestyle-maritime-scatter.jpg', alt: 'Maritime fish-scatter wallpaper' },
+    { src: '/images/etsy-product-2.jpg', alt: 'Forever Can cutting template insert' }
+  ];
+  igStrip.innerHTML = frames.map((frame, index) => instagramFrame(frame.src, frame.alt, index)).join('');
+}
+
+document.addEventListener('click', (event) => {
+  const add = event.target.closest('[data-add]');
+  if (!add) return;
+  addToCart(add.dataset.add);
+  add.textContent = 'ADDED';
+});

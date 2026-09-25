@@ -1,11 +1,14 @@
 import './styles.css';
 import './site-shell.js';
-import { products, getProduct, formatPrice, productUrl, shop } from './products.js';
+import { patterns, getProduct, formatPrice, productUrl, shop, howItWorks } from './products.js';
+import { howStepsMarkup } from './markup.js';
 import { addToCart } from './cart.js';
 
 const slug = document.body.dataset.product;
 const product = getProduct(slug);
 const root = document.querySelector('#product-root');
+const price = product.price || shop.price;
+const etsy = product.etsyUrl || shop.etsyListing;
 
 document.documentElement.style.setProperty('--side-light', product.colors[0]);
 document.documentElement.style.setProperty('--side-dark', product.colors[1]);
@@ -17,17 +20,17 @@ structuredData.type = 'application/ld+json';
 structuredData.textContent = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: `${product.title} — The Forever Can`,
+  name: product.title,
   description: product.description,
   image: product.images.map((src) => new URL(src, window.location.origin).href),
   brand: { '@type': 'Brand', name: 'The Forever Can' },
-  material: product.materials,
-  color: product.pattern,
+  material: shop.materials,
+  color: product.name,
   offers: {
     '@type': 'Offer',
-    url: product.etsyUrl || new URL(productUrl(product.slug), window.location.origin).href,
-    priceCurrency: product.currency,
-    price: String(product.price),
+    url: etsy,
+    priceCurrency: shop.currency,
+    price: String(price),
     availability: 'https://schema.org/InStock'
   },
   aggregateRating: shop.rating
@@ -36,12 +39,12 @@ structuredData.textContent = JSON.stringify({
 });
 document.head.append(structuredData);
 
-const next = products[(products.findIndex((item) => item.slug === product.slug) + 1) % products.length];
+const next = patterns[(patterns.findIndex((item) => item.slug === product.slug) + 1) % patterns.length];
 const gallery = product.images
   .map(
     (src, index) => `<figure>
       <img src="${src}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${product.title} view ${index + 1}" />
-      <figcaption>${index === 0 ? 'PATTERN / CAMPAIGN STILL' : 'ROOM / COLLECTION'}</figcaption>
+      <figcaption>${index === 0 ? 'LOOK / MATCH THE WALL' : 'PAPER / TEMPLATE / KIT'}</figcaption>
     </figure>`
   )
   .join('');
@@ -50,79 +53,94 @@ if (root) {
   root.innerHTML = `
     <section class="pdp-cover">
       <div class="pdp-title">
-        <p class="utility">PATTERN ${product.index} / ${product.pattern.toUpperCase()}</p>
-        <h1>${product.title.toUpperCase()}</h1>
+        <p class="utility">${product.style.toUpperCase()} / LOOK ${product.index}</p>
+        <h1>FOREVER CAN<br />IN ${product.name.toUpperCase()}</h1>
         <p>${product.story}</p>
-        <a class="pdp-title-link" href="#gallery">SEE THE PAPER ↘</a>
+        <p class="lookbook-note">${shop.lookbookNote}</p>
+        <a class="pdp-title-link" href="#howto">SEE HOW IT WORKS ↘</a>
       </div>
       <figure class="pdp-product-stage">
-        <img class="pdp-cover-image" src="${product.images[0]}" width="1254" height="1254" fetchpriority="high" alt="${product.title} wallpaper wastebasket" />
-        <figcaption>WALLPAPER INSERT / PATENTED SHELL</figcaption>
+        <img class="pdp-cover-image" src="${product.images[0]}" width="1254" height="1254" fetchpriority="high" alt="${product.title} matching the wall" />
+        <figcaption>${product.mood.toUpperCase()} / ${(product.rooms || []).join(' · ').toUpperCase()}</figcaption>
       </figure>
       <div class="pdp-float">
         <span>THE FOREVER CAN</span>
-        <b>${formatPrice(product.price)} <small>ONE CAN</small></b>
-        <em>${product.materials.toUpperCase()}</em>
-        <button type="button" class="solid-btn" data-add="${product.id}">ADD TO CART</button>
-        <a href="${product.etsyUrl}" target="_blank" rel="noopener">BUY ON ETSY ↗</a>
+        <b>${formatPrice(price)} <small>ONE CAN</small></b>
+        <em>${shop.materials.toUpperCase()}</em>
+        <button type="button" class="solid-btn" data-add="${product.id}">ADD LOOK</button>
+        <a class="ghost-btn" href="${etsy}" target="_blank" rel="noopener">BUY ON ETSY ↗</a>
       </div>
     </section>
-    <section class="pdp-palette" aria-label="Other patterns">
-      <p class="utility">PICK ANOTHER PAPER</p>
-      <div>${products
+    <div class="sticky-buy" aria-label="Buy The Forever Can">
+      <button type="button" class="solid-btn" data-add="${product.id}">ADD LOOK</button>
+      <a class="ghost-btn" href="${etsy}" target="_blank" rel="noopener">ETSY · ${formatPrice(price)}</a>
+    </div>
+    <section class="pdp-palette" aria-label="Other wallpaper looks">
+      <p class="utility">OTHER PAPERS</p>
+      <div>${patterns
         .map(
           (item) => `<a class="swatch-link${item.slug === product.slug ? ' is-current' : ''}" href="${productUrl(item.slug)}">
-            <span style="--swatch-light:${item.colors[0]};--swatch-dark:${item.colors[1]}"></span>
-            <b>${item.index}</b><em>${item.title}</em>
+            <span style="background-image:url('${item.patternTile}');--swatch-light:${item.colors[0]};--swatch-dark:${item.colors[1]}"></span>
+            <b>${item.index}</b><em>${item.name}</em>
           </a>`
         )
         .join('')}</div>
     </section>
     <section class="pdp-intro">
-      <p class="utility">PATENTED / ${shop.patent}</p>
+      <p class="utility">LEFTOVER PAPER / ${shop.patent}</p>
       <h2>${product.story.toUpperCase()}</h2>
       <p>${product.longDescription}</p>
     </section>
     <section class="pdp-photo-suite" id="gallery">
       <header>
         <p class="utility">THE LOOK</p>
-        <h2>PAPER YOU<br /><span>CAN CHANGE.</span></h2>
+        <h2>SAME CAN.<br /><span>THIS PAPER.</span></h2>
         <p>${product.description}</p>
       </header>
       <div class="pdp-gallery">${gallery}</div>
     </section>
+    <section class="howto-band pdp-howto" id="howto">
+      <header>
+        <p class="utility">HOW IT WORKS</p>
+        <h2>FOUR STEPS.<br />NO GLUE.</h2>
+        <a class="arrow-link" href="/how-it-works/">FULL DIY ↗</a>
+      </header>
+      <div class="how-steps how-steps-compact">${howStepsMarkup(howItWorks, { diagrams: false })}</div>
+    </section>
     <section class="pdp-specs" id="specs">
       <div class="spec-lead">
-        <p class="utility">CAN ${product.index}</p>
-        <h2>THE<br />DETAILS.</h2>
-        <p>A wallpaper wastebasket, not a glued souvenir.</p>
+        <p class="utility">LOOK ${product.index}</p>
+        <h2>THE<br />KIT.</h2>
+        <p>One patented can. Nickel or gold insert chosen on Etsy. This page is the wallpaper look.</p>
       </div>
       <dl>
-        <div><dt>Price</dt><dd>${formatPrice(product.price)}</dd></div>
-        <div><dt>Finish</dt><dd>${product.finish || product.pattern}</dd></div>
-        <div><dt>Look</dt><dd>${product.pattern}</dd></div>
-        <div><dt>Size</dt><dd>${product.size}</dd></div>
-        <div><dt>Materials</dt><dd>${product.materials}</dd></div>
-        <div><dt>Care</dt><dd>${product.care}</dd></div>
-        <div><dt>Shop</dt><dd>${shop.etsyShop || 'WallpaperWastebasket'}</dd></div>
+        <div><dt>Price</dt><dd>${formatPrice(price)}</dd></div>
+        <div><dt>Look</dt><dd>${product.name}</dd></div>
+        <div><dt>Mood</dt><dd>${product.mood}</dd></div>
+        <div><dt>Rooms</dt><dd>${(product.rooms || []).join(', ')}</dd></div>
+        <div><dt>Insert</dt><dd>Nickel or gold — pick on Etsy</dd></div>
+        <div><dt>Shell</dt><dd>Clear acrylic cylinder</dd></div>
+        <div><dt>Includes</dt><dd>Cutting template</dd></div>
+        <div><dt>Size</dt><dd>${shop.size}</dd></div>
+        <div><dt>Care</dt><dd>${shop.care}</dd></div>
+        <div><dt>Shop</dt><dd>${shop.etsyShop}</dd></div>
         <div><dt>Rating</dt><dd>${shop.rating}.0 / ${shop.reviewCount} reviews</dd></div>
-        <div><dt>Returns</dt><dd>${shop.returns}</dd></div>
-        <div><dt>Inventor</dt><dd>Patti Gilley</dd></div>
+        <div><dt>Inventor</dt><dd>${shop.inventor}</dd></div>
         <div><dt>Patent</dt><dd>${shop.patent}</dd></div>
       </dl>
     </section>
     <section class="pdp-release">
       <p class="utility">YOUR FOREVER CAN</p>
-      <h2>${formatPrice(product.price)}<br /><em>KEEP THE CAN.</em></h2>
-      <p>Add it to a local cart, then check out through the matching Etsy listing — or send an inquiry with your shipping details.</p>
+      <h2>${formatPrice(price)}<br /><em>KEEP THE CAN.</em></h2>
+      <p>Add the look to a local cart, then check out through the live Etsy listing. Choose nickel or gold insert there.</p>
       <div class="pdp-release-links">
-        <button type="button" class="solid-btn" data-add="${product.id}">ADD TO CART</button>
-        <a href="${product.etsyUrl}" target="_blank" rel="noopener">OPEN ETSY ↗</a>
+        <button type="button" class="solid-btn" data-add="${product.id}">ADD LOOK</button>
+        <a href="${etsy}" target="_blank" rel="noopener">OPEN ETSY ↗</a>
       </div>
     </section>
     <a class="next-color" href="${productUrl(next.slug)}" style="--next-light:${next.colors[0]};--next-dark:${next.colors[1]}">
-      <span>NEXT PAPER / ${next.index}</span>
-      <strong>${next.title.toUpperCase()}</strong>
+      <span>NEXT LOOK / ${next.index}</span>
+      <strong>${next.name.toUpperCase()}</strong>
       <b>↗</b>
     </a>`;
 }
@@ -131,5 +149,7 @@ document.addEventListener('click', (event) => {
   const add = event.target.closest('[data-add]');
   if (!add) return;
   addToCart(add.dataset.add);
-  add.textContent = 'ADDED TO CART';
+  document.querySelectorAll('[data-add]').forEach((node) => {
+    if (node.dataset.add === add.dataset.add) node.textContent = 'ADDED';
+  });
 });
