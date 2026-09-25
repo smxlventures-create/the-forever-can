@@ -215,7 +215,7 @@ figcaption { padding-top: .7rem; font: 500 .65rem "DM Mono", monospace; color: v
 
 .match-hero { display: grid; grid-template-columns: 58% 42%; min-height: calc(100svh - 104px); border-bottom: var(--line); background: var(--pink); }
 .match-hero-photo { position: relative; min-height: 62svh; margin: 0; background: var(--ink); }
-.match-hero-photo img { height: 100%; object-fit: cover; object-position: 50% 70%; }
+.match-hero-photo img { height: 100%; object-fit: cover; object-position: 68% 48%; }
 .match-hero-photo figcaption { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; padding: .75rem .85rem; display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; background: var(--white); border: var(--line); font: 500 .62rem "DM Mono", monospace; color: var(--ink); }
 .match-hero-photo figcaption b { text-align: center; }
 .match-hero-copy { padding: clamp(2rem,5vw,6rem) clamp(1.1rem,4vw,4rem); display: flex; flex-direction: column; justify-content: center; }
