@@ -3,7 +3,31 @@ import { resolve } from 'node:path';
 import catalog from '../src/data/products.json' with { type: 'json' };
 
 const productsDir = resolve(import.meta.dirname, '../products');
-const retired = ['the-forever-can', 'brushed-nickel', 'gold-finish', 'custom-diy', 'art-photos', 'seasonal-holiday'];
+const keep = new Set(catalog.patterns.map((item) => item.slug));
+const { readdir } = await import('node:fs/promises');
+for (const name of await readdir(productsDir).catch(() => [])) {
+  if (!keep.has(name)) {
+    await rm(resolve(productsDir, name), { recursive: true, force: true });
+  }
+}
+const retired = [
+  'the-forever-can',
+  'brushed-nickel',
+  'gold-finish',
+  'custom-diy',
+  'art-photos',
+  'seasonal-holiday',
+  'palm-aviary',
+  'blush-garden',
+  'rose-trellis',
+  'sage-chinoiserie',
+  'cobalt-lattice',
+  'peony-studio',
+  'atelier-stripe',
+  'fern-conservatory',
+  'calacatta-stone',
+  'midnight-toile'
+];
 
 for (const slug of retired) {
   await rm(resolve(productsDir, slug), { recursive: true, force: true });

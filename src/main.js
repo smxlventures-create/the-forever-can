@@ -28,12 +28,12 @@ if (howBand) howBand.innerHTML = howStepsMarkup(howItWorks);
 const igStrip = document.querySelector('#ig-strip');
 if (igStrip) {
   const frames = [
-    { src: '/images/etsy-forever-can-1.jpg', alt: 'Forever Can matched to tropical wallpaper' },
-    { src: '/images/craft-kit.png', alt: 'Paper dropping behind the clear acrylic shell' },
-    { src: '/images/etsy-forever-can-2.jpg', alt: 'Cutting template on The Forever Can insert' },
-    { src: '/images/hero-blush-floral.png', alt: 'Blush garden look on a Forever Can' },
-    { src: '/images/editorial-collection.png', alt: 'Four wallpaper looks on Forever Cans' },
-    { src: '/images/product-chinoiserie.png', alt: 'Sage chinoiserie look' }
+    { src: '/images/hero-match-wall.jpg', alt: 'Leftover roll beside a matching Forever Can' },
+    { src: '/images/shop-chinoiserie.jpg', alt: 'Chinoiserie Blue Bird look' },
+    { src: '/images/shop-botanical.jpg', alt: 'Botanical Fern look' },
+    { src: '/images/shop-tropical.jpg', alt: 'Tropical Palm look' },
+    { src: '/images/etsy-product-1.jpg', alt: 'Live Etsy Forever Can matching tropical wallpaper' },
+    { src: '/images/etsy-product-2.jpg', alt: 'Forever Can cutting template insert' }
   ];
   igStrip.innerHTML = frames.map((frame, index) => instagramFrame(frame.src, frame.alt, index)).join('');
 }

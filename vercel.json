@@ -7,6 +7,10 @@
     { "source": "/products/gold-finish", "destination": "/shop/", "permanent": true },
     { "source": "/products/custom-diy", "destination": "/how-it-works/", "permanent": true },
     { "source": "/products/art-photos", "destination": "/how-it-works/", "permanent": true },
-    { "source": "/products/seasonal-holiday", "destination": "/how-it-works/", "permanent": true }
+    { "source": "/products/seasonal-holiday", "destination": "/how-it-works/", "permanent": true },
+    { "source": "/products/palm-aviary", "destination": "/products/tropical-palm/", "permanent": true },
+    { "source": "/products/sage-chinoiserie", "destination": "/products/chinoiserie-blue-bird/", "permanent": true },
+    { "source": "/products/fern-conservatory", "destination": "/products/botanical-fern/", "permanent": true },
+    { "source": "/products/cobalt-lattice", "destination": "/products/geometric-deco/", "permanent": true }
   ]
 }

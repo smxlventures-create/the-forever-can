@@ -31,10 +31,11 @@ Drop replacements here — see [`public/images/README.md`](public/images/README.
 
 | File | Use |
 | --- | --- |
-| `higgsfield-hero.jpg` | Home hero (can flush against matching wallpaper + leftover roll). Point the hero `<img>` in `index.html` at it. |
+| `hero-match-wall.jpg` | Home hero (leftover roll + matching can) — **in repo** |
+| `hero-before-after.jpg` | How-it-works value prop — **in repo** |
+| `shop-*.jpg` | Pattern campaign stills — **in repo** |
+| `etsy-product-1.jpg` / `etsy-product-2.jpg` | Live Etsy kit / template — **in repo** |
 | `ig-01.jpg` … `ig-06.jpg` | Instagram strip. Update the list in `src/main.js`. |
-| `pattern-{slug}.jpg` | Pattern campaign still. Each pattern already has this path as `campaignSlot`. Move it to `images[0]` when the file exists. |
-| `howto-01.jpg` … `howto-04.jpg` | Real DIY photos for how-it-works diagrams. |
 
 ## Run
 
