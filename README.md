@@ -2,9 +2,9 @@
 
 Editorial storefront for **The Forever Can** — Patti Gilley’s patented wallpaper wastebasket (`US 2024/0327113 A1`). Visual language is adapted from the Toala towels site (Archivo Black / Space Grotesk / DM Mono, hard rules, color blocking) and re-skinned for wallpaper, home décor, and the pink Instagram mark. It is not a towel shop.
 
-Primary Etsy listing: [etsy.com/listing/1552653332](https://www.etsy.com/listing/1552653332/)
+Primary Etsy listing: [The Forever Can](https://www.etsy.com/listing/1552653332/the-forever-can-wallpaper-wastebasket) in shop **WallpaperWastebasket** — $59.95 USD, 5.0 (~18 reviews), 30-day returns.
 
-Etsy bot protection blocked a live scrape, so `src/data/products.json` ships a seeded catalog of six real wallpaper-wastebasket concepts (custom, floral, chinoiserie, geometric, damask, toile). The known listing URL is attached. Refresh from the Open API when you have a key.
+DataDome blocks live scrapes. `src/data/products.json` is seeded from that verified listing: real title, price, description, and Etsy CDN photos, plus storefront variants for nickel vs gold inserts and DIY / photo / holiday-paper options. Every variant deep-links back to the same Etsy listing for checkout. Refresh from the Open API when you have a key.
 
 ## Run
 
@@ -52,7 +52,7 @@ Each product in `src/data/products.json`:
 
 `id`, `slug`, `title`, `price`, `currency`, `description`, `images[]`, `etsyUrl`, `tags`
 
-plus editorial fields used by the pages (`pattern`, `story`, `materials`, `size`, `colors`).
+plus editorial fields used by the pages (`pattern`, `finish`, `story`, `materials`, `size`, `colors`). Seeded price is **$59.95**.
 
 ## Brand
 

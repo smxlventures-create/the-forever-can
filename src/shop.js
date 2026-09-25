@@ -13,7 +13,7 @@ function card(product) {
       <span>${product.index}</span>
     </a>
     <div class="shop-card-copy">
-      <p class="utility">PATTERN ${product.index} / ${product.pattern.toUpperCase()}</p>
+      <p class="utility">LOOK ${product.index} / ${(product.finish || product.pattern).toUpperCase()}</p>
       <h2>${product.title.toUpperCase()}</h2>
       <p>${product.story}</p>
       <div class="shop-card-buy">

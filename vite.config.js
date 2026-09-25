@@ -10,12 +10,12 @@ export default defineConfig({
         about: resolve(import.meta.dirname, 'about/index.html'),
         contact: resolve(import.meta.dirname, 'contact/index.html'),
         cart: resolve(import.meta.dirname, 'cart/index.html'),
-        foreverCan: resolve(import.meta.dirname, 'products/your-forever-can/index.html'),
-        roseGarden: resolve(import.meta.dirname, 'products/rose-garden/index.html'),
-        chinoiserie: resolve(import.meta.dirname, 'products/chinoiserie-grove/index.html'),
-        lattice: resolve(import.meta.dirname, 'products/lattice-geometry/index.html'),
-        blushDamask: resolve(import.meta.dirname, 'products/blush-damask/index.html'),
-        inkToile: resolve(import.meta.dirname, 'products/ink-toile/index.html')
+        foreverCan: resolve(import.meta.dirname, 'products/the-forever-can/index.html'),
+        brushedNickel: resolve(import.meta.dirname, 'products/brushed-nickel/index.html'),
+        goldFinish: resolve(import.meta.dirname, 'products/gold-finish/index.html'),
+        customDiy: resolve(import.meta.dirname, 'products/custom-diy/index.html'),
+        artPhotos: resolve(import.meta.dirname, 'products/art-photos/index.html'),
+        seasonalHoliday: resolve(import.meta.dirname, 'products/seasonal-holiday/index.html')
       }
     }
   }

@@ -25,11 +25,14 @@ structuredData.textContent = JSON.stringify({
   color: product.pattern,
   offers: {
     '@type': 'Offer',
-    url: new URL(productUrl(product.slug), window.location.origin).href,
+    url: product.etsyUrl || new URL(productUrl(product.slug), window.location.origin).href,
     priceCurrency: product.currency,
     price: String(product.price),
     availability: 'https://schema.org/InStock'
-  }
+  },
+  aggregateRating: shop.rating
+    ? { '@type': 'AggregateRating', ratingValue: String(shop.rating), reviewCount: String(shop.reviewCount) }
+    : undefined
 });
 document.head.append(structuredData);
 
@@ -96,13 +99,16 @@ if (root) {
       </div>
       <dl>
         <div><dt>Price</dt><dd>${formatPrice(product.price)}</dd></div>
-        <div><dt>Pattern</dt><dd>${product.pattern}</dd></div>
+        <div><dt>Finish</dt><dd>${product.finish || product.pattern}</dd></div>
+        <div><dt>Look</dt><dd>${product.pattern}</dd></div>
         <div><dt>Size</dt><dd>${product.size}</dd></div>
         <div><dt>Materials</dt><dd>${product.materials}</dd></div>
         <div><dt>Care</dt><dd>${product.care}</dd></div>
+        <div><dt>Shop</dt><dd>${shop.etsyShop || 'WallpaperWastebasket'}</dd></div>
+        <div><dt>Rating</dt><dd>${shop.rating}.0 / ${shop.reviewCount} reviews</dd></div>
+        <div><dt>Returns</dt><dd>${shop.returns}</dd></div>
         <div><dt>Inventor</dt><dd>Patti Gilley</dd></div>
         <div><dt>Patent</dt><dd>${shop.patent}</dd></div>
-        <div><dt>Purchase</dt><dd>Etsy listing or inquiry</dd></div>
       </dl>
     </section>
     <section class="pdp-release">

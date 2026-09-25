@@ -10,11 +10,14 @@ export function getProduct(slug) {
 }
 
 export function formatPrice(value, currency = 'USD') {
+  const amount = Number(value);
+  const hasCents = Math.round(amount * 100) % 100 !== 0;
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
-    maximumFractionDigits: 0
-  }).format(value);
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: 2
+  }).format(amount);
 }
 
 export function productUrl(slug) {

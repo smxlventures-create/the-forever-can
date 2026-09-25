@@ -5,7 +5,8 @@
  *   ETSY_API_KEY=xxxxx npm run fetch:etsy
  *
  * Without ETSY_API_KEY the seeded catalog is left in place.
- * Primary listing: https://www.etsy.com/listing/1552653332/
+ * Primary listing: https://www.etsy.com/listing/1552653332/the-forever-can-wallpaper-wastebasket
+ * Shop: WallpaperWastebasket. Seeded price is $59.95 when the API is unavailable.
  *
  * Etsy Open API v3 docs:
  *   https://developers.etsy.com/documentation/reference
@@ -72,7 +73,7 @@ const products = listings.map((listing, index) => {
     slug: slugify(title) || `listing-${listing.listing_id}`,
     title,
     pattern: (listing.tags || [])[0] || 'Wallpaper wastebasket',
-    price: money(listing) || 148,
+    price: money(listing) || seeded.shop.price || 59.95,
     currency: listing.price?.currency_code || 'USD',
     featured: index < 4,
     index: String(index + 1).padStart(2, '0'),
