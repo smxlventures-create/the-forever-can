@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="The Forever Can wallpaper wastebasket mark">
+  <circle cx="100" cy="100" r="100" fill="#f4b6c8"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M69 70h62l-7 78H76Z" fill="#fff"/>
+  <ellipse cx="100" cy="70" rx="32" ry="8" fill="#fff"/>
+  <ellipse cx="100" cy="70" rx="24" ry="5" fill="#f4b6c8"/>
+  <path d="M82 92h36M80 112h40M79 132h42" stroke="#f4b6c8" stroke-width="1.6" opacity=".65"/>
+  <path d="M46 42c22-18 86-18 108 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M48 158c21 16 83 16 104 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+</svg>

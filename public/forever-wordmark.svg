@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="wmTitle">
+  <title id="wmTitle">The Forever Can</title>
+  <g transform="translate(8,18)">
+    <circle cx="57" cy="57" r="57" fill="#f4b6c8"/>
+    <path d="M41 46h32l-3 36H44Z" fill="#fff"/>
+    <ellipse cx="57" cy="46" rx="16" ry="4" fill="#fff"/>
+    <ellipse cx="57" cy="46" rx="12" ry="2.5" fill="#f4b6c8"/>
+  </g>
+  <g fill="currentColor">
+    <text x="140" y="58" font-family="Arial Black, Archivo Black, sans-serif" font-size="28" letter-spacing="6">THE</text>
+    <text x="140" y="108" font-family="Arial Black, Archivo Black, sans-serif" font-size="52" letter-spacing="-1.5">FOREVER CAN</text>
+  </g>
+  <rect x="140" y="122" width="292" height="8" fill="#f4b6c8"/>
+  <path d="M444 122h18l-2 18h-14Z" fill="#f4b6c8"/>
+</svg>
