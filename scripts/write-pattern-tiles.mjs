@@ -136,6 +136,132 @@ const tiles = [
       <path d="M120 90 c18-28 50-18 44 12 c-4 22-24 32-42 26 c8-10 16-6 16 4 c-16 8-26-10-18-42z"/>
       <path d="M36 120 c14-22 40-14 36 10 c-2 16-18 24-32 20 c6-8 12-6 14 2 c-12 6-22-6-18-32z"/>
     </g>`
+  },
+  {
+    file: 'pattern-blue-sprig.svg',
+    fill: '#f4f2ee',
+    ink: '#7d90a8',
+    paths: `<g fill="#7d90a8">
+      <path d="M30 20 v140"/>
+      <path d="M30 40 l-10-8 10 4 10-8 -10 2"/>
+      <path d="M30 70 l-12-7 12 4 12-7 -12 2"/>
+      <path d="M30 100 l-10-8 10 4 10-8 -10 2"/>
+      <path d="M70 10 v150"/>
+      <path d="M70 36 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M70 68 l-12-8 12 4 12-8 -12 2"/>
+      <path d="M110 18 v145"/>
+      <path d="M110 48 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M110 86 l-12-8 12 4 12-8 -12 2"/>
+      <path d="M150 8 v155"/>
+      <path d="M150 40 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M150 78 l-12-8 12 4 12-8 -12 2"/>
+    </g>`
+  },
+  {
+    file: 'pattern-tropical-silhouette.svg',
+    fill: '#f7f4ee',
+    ink: '#5a4636',
+    paths: `<g fill="#5a4636">
+      <path d="M20 160 C40 80 80 30 130 18 C90 70 70 120 78 160 Z"/>
+      <circle cx="118" cy="70" r="10"/>
+      <path d="M118 78 v36 l-14 22 h8 l10-18 12 20 h8 l-16-28 v-32"/>
+      <path d="M140 40 C160 30 176 50 168 78 C150 60 138 50 140 40Z"/>
+    </g>`
+  },
+  {
+    file: 'pattern-maritime-scatter.svg',
+    fill: '#f3f1ec',
+    ink: '#8a9aa8',
+    paths: `<g fill="#8a9aa8">
+      <ellipse cx="36" cy="40" rx="12" ry="5"/><path d="M48 40 l8-4 v8 z"/>
+      <ellipse cx="110" cy="30" rx="10" ry="4" fill="#c47a6a"/><path d="M120 30 l6-3 v6 z" fill="#c47a6a"/>
+      <ellipse cx="70" cy="80" rx="11" ry="4.5"/><path d="M81 80 l7-3 v6 z"/>
+      <ellipse cx="140" cy="90" rx="12" ry="5"/><path d="M152 90 l8-4 v8 z"/>
+      <ellipse cx="40" cy="130" rx="10" ry="4" fill="#c47a6a"/><path d="M50 130 l6-3 v6 z" fill="#c47a6a"/>
+      <ellipse cx="100" cy="150" rx="11" ry="4.5"/><path d="M111 150 l7-3 v6 z"/>
+    </g>`
+  },
+  {
+    file: 'pattern-blue-damask.svg',
+    fill: '#d5e2ee',
+    ink: '#ffffff',
+    paths: `<g fill="#ffffff">
+      <circle cx="45" cy="45" r="16"/>
+      <circle cx="135" cy="45" r="16"/>
+      <circle cx="45" cy="135" r="16"/>
+      <circle cx="135" cy="135" r="16"/>
+      <circle cx="90" cy="90" r="20"/>
+    </g>
+    <g fill="#d5e2ee">
+      <circle cx="45" cy="45" r="6"/>
+      <circle cx="135" cy="45" r="6"/>
+      <circle cx="45" cy="135" r="6"/>
+      <circle cx="135" cy="135" r="6"/>
+      <circle cx="90" cy="90" r="8"/>
+    </g>`
+  },
+  {
+    file: 'pattern-lattice.svg',
+    fill: '#f4f2ee',
+    ink: '#9aa6b3',
+    paths: `<g fill="none" stroke="#9aa6b3" stroke-width="3">
+      <path d="M-20 40 L220 280"/>
+      <path d="M-20 90 L220 330"/>
+      <path d="M-20 -10 L220 230"/>
+      <path d="M-20 280 L220 40"/>
+      <path d="M-20 330 L220 90"/>
+      <path d="M-20 230 L220 -10"/>
+    </g>`
+  },
+  {
+    file: 'pattern-oversized-tropical.svg',
+    fill: '#f4efe6',
+    ink: '#5a6a55',
+    paths: `<g fill="#5a6a55">
+      <path d="M10 170 C40 80 90 20 160 10 C110 70 80 120 90 170 Z"/>
+    </g>
+    <g fill="#c47a4a" opacity=".7">
+      <path d="M70 180 C100 100 140 50 190 40 C150 90 130 140 140 180 Z"/>
+    </g>`
+  },
+  {
+    file: 'pattern-sunburst.svg',
+    fill: '#efe6d6',
+    ink: '#c4b49a',
+    paths: `<g fill="none" stroke="#c4b49a" stroke-width="1.6">
+      <path d="M40 40 L90 90 L40 50"/>
+      <path d="M90 0 L90 90 L110 10"/>
+      <path d="M160 20 L90 90 L170 50"/>
+      <path d="M180 90 L90 90 L170 110"/>
+      <path d="M150 170 L90 90 L170 150"/>
+      <path d="M90 180 L90 90 L70 170"/>
+      <path d="M20 150 L90 90 L10 170"/>
+      <path d="M0 90 L90 90 L10 70"/>
+    </g>`
+  },
+  {
+    file: 'pattern-feathery-botanical.svg',
+    fill: '#f3f1ec',
+    ink: '#9aa3a0',
+    paths: `<g fill="none" stroke="#9aa3a0" stroke-width="1.5">
+      <path d="M20 170 C50 90 90 40 140 20"/>
+      <path d="M50 150 C70 100 110 70 150 60"/>
+      <path d="M40 120 C80 80 120 90 160 110"/>
+    </g>
+    <g fill="#9aa3a0" opacity=".5">
+      <ellipse cx="70" cy="80" rx="18" ry="6" transform="rotate(-30 70 80)"/>
+      <ellipse cx="120" cy="50" rx="16" ry="5" transform="rotate(-20 120 50)"/>
+    </g>`
+  },
+  {
+    file: 'pattern-taupe-leaf.svg',
+    fill: '#f4f0e8',
+    ink: '#b8aa96',
+    paths: `<g fill="#b8aa96">
+      <path d="M20 30 C60 10 90 40 70 90 C40 70 18 50 20 30Z"/>
+      <path d="M90 10 C140 0 170 40 140 100 C110 70 88 40 90 10Z"/>
+      <path d="M30 110 C80 90 100 140 70 180 C40 150 22 130 30 110Z"/>
+    </g>`
   }
 ];
 

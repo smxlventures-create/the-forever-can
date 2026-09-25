@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+  <rect width="180" height="180" fill="#f4efe6"/>
+  <g fill="#5a6a55">
+      <path d="M10 170 C40 80 90 20 160 10 C110 70 80 120 90 170 Z"/>
+    </g>
+    <g fill="#c47a4a" opacity=".7">
+      <path d="M70 180 C100 100 140 50 190 40 C150 90 130 140 140 180 Z"/>
+    </g>
+</svg>

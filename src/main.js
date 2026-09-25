@@ -30,9 +30,9 @@ if (igStrip) {
   const frames = [
     { src: '/images/ig/lifestyle-grey-botanical.jpg', alt: 'Grey botanical wall and matching Forever Can' },
     { src: '/images/ig/lifestyle-banana-leaf.jpg', alt: 'Navy banana-leaf can beside a navy vanity' },
-    { src: '/images/ig/lifestyle-koi-harmony.jpg', alt: 'Harmony koi pond wallpaper and matching can' },
-    { src: '/images/ig/lifestyle-hydrangea.jpg', alt: 'Pale blue hydrangea powder room' },
-    { src: '/images/ig/retail-shelf-patterns-a.jpg', alt: 'Retail shelf of wallpaper-wrapped Forever Cans' },
+    { src: '/images/ig/lifestyle-blue-damask.jpg', alt: 'Blue damask wallpaper and matching Forever Can' },
+    { src: '/images/ig/lifestyle-tropical-silhouette.jpg', alt: 'Monochrome tropical silhouette wrap' },
+    { src: '/images/ig/lifestyle-maritime-scatter.jpg', alt: 'Maritime fish-scatter wallpaper' },
     { src: '/images/etsy-product-2.jpg', alt: 'Forever Can cutting template insert' }
   ];
   igStrip.innerHTML = frames.map((frame, index) => instagramFrame(frame.src, frame.alt, index)).join('');

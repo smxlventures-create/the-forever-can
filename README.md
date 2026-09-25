@@ -21,7 +21,7 @@ Clear acrylic cylindrical wastebasket + interchangeable metal insert (nickel or 
 
 Pattern fields: `slug`, `name`, `title`, `mood`, `style`, `rooms`, `colors`, `description`, `images`, `patternTile`, `source`.
 
-Primary lifestyle stills live in `public/images/ig/` (grey botanical, koi, banana leaf, dark floral, fan palm, hydrangea, blue palm, feathers, paisley, plus retail shelves). Higgsfield fills cover chinoiserie / blush damask / botanical / geometric / tropical.
+Primary lifestyle stills live in `public/images/ig/`. The shop is 14 Instagram wallpaper looks spanning Botanical, Tropical, Chinoiserie/Birds, Floral, Damask, Geometric/Trellis, Sunburst/Art Deco, Animal/Novelty, Maritime, and Neutral. Higgsfield campaign stills are gallery fillers only.
 
 ## Imagery drop-in
 

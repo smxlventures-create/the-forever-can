@@ -14,7 +14,16 @@ Saved under `ig/` with the @the_forever_can filenames:
 | `ig/lifestyle-hydrangea.jpg` | Pale Blue Hydrangea |
 | `ig/lifestyle-blue-palm.jpg` | Blue Palm Frond |
 | `ig/lifestyle-feathers.jpg` | Feather Parade |
-| `ig/lifestyle-paisley.jpg` | Magenta Paisley |
+| `ig/lifestyle-paisley.jpg` | Magenta Paisley (archive) |
+| `ig/lifestyle-blue-sprig.jpg` | Vertical Blue Botanical Sprig |
+| `ig/lifestyle-tropical-silhouette.jpg` | Monochrome Tropical / animal |
+| `ig/lifestyle-maritime-scatter.jpg` | Maritime Scatter |
+| `ig/lifestyle-blue-damask.jpg` | Blue Damask Arabesque |
+| `ig/lifestyle-lattice.jpg` | Lattice Trellis |
+| `ig/lifestyle-oversized-tropical.jpg` | Oversized Tropical Banana/Palm |
+| `ig/lifestyle-sunburst.jpg` | Art Deco Sunburst |
+| `ig/lifestyle-feathery-botanical.jpg` | Soft Blue Feathery Botanical |
+| `ig/lifestyle-taupe-leaf.jpg` | Taupe Leaf Botanical |
 | `ig/retail-shelf-patterns-a.jpg` | Retail shelf / swap-anytime |
 | `ig/retail-shelf-patterns-b.jpg` | Stacked stock looks |
 

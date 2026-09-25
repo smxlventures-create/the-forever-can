@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+  <rect width="180" height="180" fill="#f4f2ee"/>
+  <g fill="#7d90a8">
+      <path d="M30 20 v140"/>
+      <path d="M30 40 l-10-8 10 4 10-8 -10 2"/>
+      <path d="M30 70 l-12-7 12 4 12-7 -12 2"/>
+      <path d="M30 100 l-10-8 10 4 10-8 -10 2"/>
+      <path d="M70 10 v150"/>
+      <path d="M70 36 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M70 68 l-12-8 12 4 12-8 -12 2"/>
+      <path d="M110 18 v145"/>
+      <path d="M110 48 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M110 86 l-12-8 12 4 12-8 -12 2"/>
+      <path d="M150 8 v155"/>
+      <path d="M150 40 l-10-7 10 3 10-7 -10 2"/>
+      <path d="M150 78 l-12-8 12 4 12-8 -12 2"/>
+    </g>
+</svg>

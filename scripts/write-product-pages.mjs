@@ -35,7 +35,16 @@ const retired = [
   'ink-toile',
   'marble-vein',
   'soft-stripe',
-  'garden-rose'
+  'garden-rose',
+  'fan-palm',
+  'blue-palm',
+  'feathers',
+  'paisley',
+  'chinoiserie',
+  'blush-damask',
+  'botanical',
+  'geometric',
+  'tropical'
 ];
 
 for (const slug of retired) {

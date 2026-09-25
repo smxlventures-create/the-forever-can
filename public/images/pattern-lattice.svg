@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+  <rect width="180" height="180" fill="#f4f2ee"/>
+  <g fill="none" stroke="#9aa6b3" stroke-width="3">
+      <path d="M-20 40 L220 280"/>
+      <path d="M-20 90 L220 330"/>
+      <path d="M-20 -10 L220 230"/>
+      <path d="M-20 280 L220 40"/>
+      <path d="M-20 330 L220 90"/>
+      <path d="M-20 230 L220 -10"/>
+    </g>
+</svg>

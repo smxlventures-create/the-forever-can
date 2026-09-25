@@ -15,7 +15,18 @@ export const patterns = catalog.patterns.map((item) => ({
 }));
 export const products = patterns;
 
-const STYLE_ORDER = ['botanical', 'tropical', 'chinoiserie', 'floral', 'damask', 'geometric', 'novelty'];
+const STYLE_ORDER = [
+  'botanical',
+  'tropical',
+  'chinoiserie',
+  'floral',
+  'damask',
+  'geometric',
+  'sunburst',
+  'novelty',
+  'maritime',
+  'neutral'
+];
 export const styles = STYLE_ORDER.filter((style) => patterns.some((item) => item.style === style));
 export const styleLabels = {
   botanical: 'Botanical',
@@ -23,8 +34,11 @@ export const styleLabels = {
   chinoiserie: 'Chinoiserie / Birds',
   floral: 'Floral',
   damask: 'Damask',
-  geometric: 'Geometric',
-  novelty: 'Animal / Novelty'
+  geometric: 'Geometric / Trellis',
+  sunburst: 'Sunburst / Art Deco',
+  novelty: 'Animal / Novelty',
+  maritime: 'Maritime',
+  neutral: 'Neutral'
 };
 
 export const productMap = Object.fromEntries(patterns.map((item) => [item.slug, item]));
