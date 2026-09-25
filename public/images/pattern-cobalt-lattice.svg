@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img">
+
+    <rect width="160" height="160" fill="#f4efe4"/>
+    <g fill="none" stroke="#2b5bac" stroke-width="10">
+      <path d="M-20 40 L40 -20 M0 160 L160 0 M40 180 L180 40"/>
+    </g>
+    <g fill="none" stroke="#ffd84d" stroke-width="6">
+      <path d="M-20 80 L80 -20 M20 180 L180 20"/>
+    </g>
+    <g fill="none" stroke="#0d0d12" stroke-width="4">
+      <path d="M-10 120 L120 -10 M60 190 L190 60"/>
+    </g>
+  
+</svg>

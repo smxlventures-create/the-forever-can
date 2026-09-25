@@ -1,10 +1,40 @@
 # The Forever Can
 
-Editorial storefront for **The Forever Can** — Patti Gilley’s patented wallpaper wastebasket (`US 2024/0327113 A1`). Visual language is adapted from the Toala towels site (Archivo Black / Space Grotesk / DM Mono, hard rules, color blocking) and re-skinned for wallpaper, home décor, and the pink Instagram mark. It is not a towel shop.
+Editorial storefront for **The Forever Can** — Patti Gilley’s patented wallpaper wastebasket (`US 2024/0327113 A1`). The site sells the real product story: **use leftover wallpaper from your walls to wrap the can so the trash can matches the room.** When you redecorate, swap the paper. The can lasts forever.
 
-Primary Etsy listing: [The Forever Can](https://www.etsy.com/listing/1552653332/the-forever-can-wallpaper-wastebasket) in shop **WallpaperWastebasket** — $59.95 USD, 5.0 (~18 reviews), 30-day returns.
+Visual language keeps Toala bones (Archivo Black / Space Grotesk / DM Mono, hard rules, color blocking) and is re-skinned for wallpaper craft — not a towel shop, and not a grid of fake insert-finish SKUs.
 
-DataDome blocks live scrapes. `src/data/products.json` is seeded from that verified listing: real title, price, description, and Etsy CDN photos, plus storefront variants for nickel vs gold inserts and DIY / photo / holiday-paper options. Every variant deep-links back to the same Etsy listing for checkout. Refresh from the Open API when you have a key.
+Primary Etsy listing: [The Forever Can](https://www.etsy.com/listing/1552653332/the-forever-can-wallpaper-wastebasket) in shop **WallpaperWastebasket** — $59.95 USD, 5.0 (~18 reviews), 30-day returns. Inventor: Patti Gilley. Instagram [@the_forever_can](https://www.instagram.com/the_forever_can/).
+
+## The product
+
+Clear acrylic cylindrical wastebasket + interchangeable metal insert (nickel or gold) + cutting template.
+
+1. Hang your wallpaper as usual — keep the leftover scraps.
+2. Trace the included template on the leftover paper.
+3. Cut, overlap the ends, drop the wrap behind the clear shell.
+4. The can matches the wall. Swap anytime (seasonal paper, photos, art too).
+
+## Catalog
+
+`src/data/products.json` is a **wallpaper pattern shop** (`shop`, `howItWorks`, `patterns[]`). Each card is “Forever Can in [Pattern Name]” — a lookbook wrap, not a separate SKU. Price stays $59.95. Checkout deep-links the live Etsy listing. Nickel vs gold is an Etsy finish choice, not a product.
+
+Pattern fields: `slug`, `name`, `mood`, `style`, `rooms`, `colors`, `description`, `images`, `patternTile`, `campaignSlot`.
+
+## Imagery drop-in
+
+Keep the Etsy CDN stills in `/public/images/` (`etsy-forever-can-1.jpg`, `etsy-forever-can-2.jpg`).
+
+Until campaign assets arrive, the shop uses those photos plus generated SVG tiles (`pattern-*.svg`) and look cards (`look-*.svg`).
+
+Drop replacements here — see [`public/images/README.md`](public/images/README.md):
+
+| File | Use |
+| --- | --- |
+| `higgsfield-hero.jpg` | Home hero (can flush against matching wallpaper + leftover roll). Point the hero `<img>` in `index.html` at it. |
+| `ig-01.jpg` … `ig-06.jpg` | Instagram strip. Update the list in `src/main.js`. |
+| `pattern-{slug}.jpg` | Pattern campaign still. Each pattern already has this path as `campaignSlot`. Move it to `images[0]` when the file exists. |
+| `howto-01.jpg` … `howto-04.jpg` | Real DIY photos for how-it-works diagrams. |
 
 ## Run
 
@@ -13,46 +43,31 @@ npm install
 npm run dev
 ```
 
-Vite serves a static multipage site:
+Vite multipage:
 
-- `/` home
-- `/shop/` collection + quick view
-- `/products/<slug>/` detail
-- `/cart/` localStorage cart
-- `/about/` Patti / patent
-- `/contact/` inquiry form
-
-## Build / deploy
+- `/` leftover-wallpaper hero, 4-step how-it-works, pattern teaser, Instagram strip, Etsy CTA
+- `/shop/` wallpaper pattern grid + style chips
+- `/products/<slug>/` pattern PDP
+- `/how-it-works/` template DIY
+- `/about/` Patti + patent + Instagram
+- `/cart/` localStorage cart → Etsy checkout or inquiry
+- `/contact/` studio note
 
 ```bash
 npm run build
 npm run preview
+npm run write:pages   # regenerate /products/<slug>/ from patterns[]
+npm run make:art      # regenerate SVG tiles, look cards, diagrams
 ```
 
-The `dist/` folder is a static Vite build and deploys cleanly on Vercel. `api/inquire.js` is a Vercel serverless route used by the cart inquiry and contact form. It validates name/email, logs the payload, and returns JSON. There are **no payment processor secrets**. Purchase is:
+## Checkout
 
-1. **Etsy** — cart “Buy on Etsy” opens the matching listing URL(s)
+There are **no payment processor secrets**. Purchase is:
+
+1. **Etsy** — “Buy on Etsy” opens listing 1552653332
 2. **Inquiry** — name, email, shipping posted to `/api/inquire` (mailto fallback in local Vite)
 
-## Refresh products from Etsy
-
-```bash
-# without a key: keeps the seeded JSON
-npm run fetch:etsy
-
-# with an Open API key
-ETSY_API_KEY=xxxxx npm run fetch:etsy
-```
-
-`scripts/fetch-etsy.mjs` pulls listing `1552653332`, then that shop’s active listings, and rewrites `src/data/products.json`. Create an app key at [etsy.com/developers](https://www.etsy.com/developers/).
-
-## Catalog fields
-
-Each product in `src/data/products.json`:
-
-`id`, `slug`, `title`, `price`, `currency`, `description`, `images[]`, `etsyUrl`, `tags`
-
-plus editorial fields used by the pages (`pattern`, `finish`, `story`, `materials`, `size`, `colors`). Seeded price is **$59.95**.
+`npm run fetch:etsy` updates shop metadata only. It will not replace the wallpaper lookbook with listing variants.
 
 ## Brand
 

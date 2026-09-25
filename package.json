@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fetch:etsy": "node scripts/fetch-etsy.mjs"
+    "fetch:etsy": "node scripts/fetch-etsy.mjs",
+    "write:pages": "node scripts/write-product-pages.mjs",
+    "make:art": "node scripts/make-pattern-art.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.4"

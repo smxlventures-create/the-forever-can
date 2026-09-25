@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img">
+
+    <rect width="160" height="160" fill="#f3e6e0"/>
+    <g fill="#c45a7a" opacity=".55">
+      <circle cx="40" cy="40" r="14"/>
+      <circle cx="52" cy="34" r="10"/>
+      <circle cx="34" cy="52" r="9"/>
+      <circle cx="120" cy="110" r="16"/>
+      <circle cx="134" cy="102" r="11"/>
+      <circle cx="112" cy="124" r="10"/>
+    </g>
+    <g fill="none" stroke="#6b7a5a" stroke-width="1.4">
+      <path d="M48 54 C60 80 70 90 88 120"/>
+      <path d="M124 120 C110 90 100 70 90 48"/>
+    </g>
+    <circle cx="88" cy="78" r="5" fill="#f7d6e0"/>
+  
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img">
+
+    <rect width="180" height="180" fill="#1b2a4a"/>
+    <g fill="none" stroke="#e8e4dc" stroke-width="1.4">
+      <path d="M24 160 C40 100 70 80 88 36"/>
+      <path d="M88 36 C76 60 50 70 30 64"/>
+      <path d="M120 170 C130 110 158 90 164 40"/>
+      <path d="M50 120 c12-8 22-4 18 10"/>
+      <path d="M140 90 c10-14 22-8 16 8"/>
+    </g>
+    <g fill="#e8e4dc">
+      <ellipse cx="46" cy="108" rx="8" ry="3"/>
+      <ellipse cx="148" cy="78" rx="7" ry="2.6"/>
+      <circle cx="88" cy="32" r="2.2"/>
+    </g>
+  
+</svg>

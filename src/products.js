@@ -1,15 +1,29 @@
 import catalog from './data/products.json';
 
 export const shop = catalog.shop;
-export const products = catalog.products;
+export const howItWorks = catalog.howItWorks;
+export const patterns = catalog.patterns.map((item) => ({
+  ...item,
+  title: item.title || `Forever Can in ${item.name}`,
+  pattern: item.name,
+  price: item.price ?? catalog.shop.price,
+  currency: item.currency ?? catalog.shop.currency,
+  etsyUrl: item.etsyUrl ?? catalog.shop.etsyListing,
+  materials: item.materials ?? catalog.shop.materials,
+  size: item.size ?? catalog.shop.size,
+  care: item.care ?? catalog.shop.care
+}));
+export const products = patterns;
 
-export const productMap = Object.fromEntries(products.map((product) => [product.slug, product]));
+export const styles = [...new Set(patterns.map((item) => item.style))];
+
+export const productMap = Object.fromEntries(patterns.map((item) => [item.slug, item]));
 
 export function getProduct(slug) {
-  return productMap[slug] || products[0];
+  return productMap[slug] || patterns[0];
 }
 
-export function formatPrice(value, currency = 'USD') {
+export function formatPrice(value, currency = shop.currency || 'USD') {
   const amount = Number(value);
   const hasCents = Math.round(amount * 100) % 100 !== 0;
   return new Intl.NumberFormat('en-US', {
@@ -22,4 +36,12 @@ export function formatPrice(value, currency = 'USD') {
 
 export function productUrl(slug) {
   return `/products/${slug}/`;
+}
+
+export function featuredPatterns(limit = 4) {
+  return patterns.filter((item) => item.featured).slice(0, limit);
+}
+
+export function roomsOf(pattern) {
+  return (pattern.rooms || []).join(' · ');
 }
