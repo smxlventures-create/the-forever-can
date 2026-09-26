@@ -83,8 +83,8 @@ for (const product of catalog.patterns) {
     <div class="ticker"><div><span>${title.toUpperCase()}</span><i>✦</i><span>$${catalog.shop.price}</span><i>✦</i><span>${product.style.toUpperCase()}</span><i>✦</i><span>THE FOREVER CAN</span></div></div>
     <header class="site-header">
       <a class="brand" href="/" aria-label="The Forever Can home"><img src="/forever-mark.svg" alt="" /><b>THE<br />FOREVER<br />CAN</b></a>
-      <nav aria-label="Main navigation"><a href="/shop/">Shop</a><a href="/how-it-works/">How-to</a><a href="/about/">About</a><a href="/cart/">Cart</a></nav>
-      <a class="header-tag" data-cart-count href="/cart/">Cart ↗</a>
+      <nav aria-label="Main navigation"><a href="/shop/">Shop</a><a href="/how-it-works/">How it works</a></nav>
+      <a class="header-tag header-buy" href="${catalog.shop.etsyListing}" target="_blank" rel="noopener">Open Etsy · $59.95</a>
     </header>
     <main id="product-root"></main>
     <footer class="site-footer">

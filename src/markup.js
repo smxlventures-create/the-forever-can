@@ -29,27 +29,34 @@ export function howStepsMarkup(steps, { diagrams = true } = {}) {
     .join('');
 }
 
-export function patternCard(pattern, { compact = false } = {}) {
+export function patternCard(pattern) {
+  const name = pattern.name || pattern.title;
   return `<article class="shop-card" style="--card-light:${pattern.colors[0]};--card-dark:${pattern.colors[1]}">
-    <a class="shop-card-image" href="${productUrl(pattern.slug)}" aria-label="View ${escapeHtml(pattern.title)}">
-      <img src="${pattern.images[0]}" width="1024" height="1024" loading="lazy" decoding="async" alt="${escapeHtml(pattern.title)} matching the wall" />
+    <a class="shop-card-image" href="${productUrl(pattern.slug)}">
+      <img src="${pattern.images[0]}" width="1024" height="1024" loading="lazy" decoding="async" alt="${escapeHtml(name)} leftover wallpaper look" />
       <span>${pattern.index}</span>
       <i class="pattern-swatch" style="background-image:url('${pattern.patternTile}')" aria-hidden="true"></i>
     </a>
     <div class="shop-card-copy">
-      <p class="utility">${pattern.style.toUpperCase()} / ${escapeHtml(roomsOf(pattern).toUpperCase())}</p>
-      <h2>${escapeHtml((pattern.title || `Forever Can — ${pattern.name}`).toUpperCase())}</h2>
-      <p>${escapeHtml(compact ? pattern.story : pattern.description)}</p>
-      <p class="lookbook-note">${escapeHtml(shop.lookbookNote)}</p>
+      <p class="utility">${pattern.style.toUpperCase()} · ${escapeHtml(roomsOf(pattern).toUpperCase())}</p>
+      <h2>${escapeHtml(name.toUpperCase())}</h2>
+      <p>${escapeHtml(pattern.story)}</p>
       <div class="shop-card-buy">
         <strong>${formatPrice(pattern.price || shop.price)}</strong>
-        <small>${escapeHtml(pattern.mood.toUpperCase())}</small>
-        <button type="button" class="solid-btn" data-add="${pattern.id}">ADD LOOK</button>
-        <a class="ghost-btn" href="${pattern.etsyUrl || shop.etsyListing}" target="_blank" rel="noopener">BUY ON ETSY</a>
-        <a class="text-btn" href="${productUrl(pattern.slug)}">FULL LOOK ↗</a>
+        <small>${escapeHtml(pattern.mood)}</small>
+        <a class="solid-btn" href="${productUrl(pattern.slug)}">View look</a>
       </div>
     </div>
   </article>`;
+}
+
+export function shopEmptyState(styleLabel) {
+  return `<div class="shop-empty" role="status">
+    <p class="utility">NO MATCHES</p>
+    <h2>NO ${escapeHtml((styleLabel || 'LOOKS').toUpperCase())} LOOKS.</h2>
+    <p>These chips group leftover-wallpaper styles. Reset to see every Forever Can look, then pick another filter.</p>
+    <button type="button" class="solid-btn" data-reset-filter>Show all looks</button>
+  </div>`;
 }
 
 export function instagramFrame(src, alt, index) {

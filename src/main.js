@@ -1,8 +1,7 @@
 import './styles.css';
 import './site-shell.js';
-import { featuredPatterns, formatPrice, howItWorks, productUrl, shop } from './products.js';
+import { featuredPatterns, howItWorks, productUrl } from './products.js';
 import { howStepsMarkup, instagramFrame } from './markup.js';
-import { addToCart } from './cart.js';
 
 const featured = document.querySelector('#featured-grid');
 if (featured) {
@@ -10,12 +9,12 @@ if (featured) {
     .map(
       (pattern) => `<a class="color-card" href="${productUrl(pattern.slug)}" style="--card-light:${pattern.colors[0]};--card-dark:${pattern.colors[1]}">
         <div class="color-photo">
-          <img src="${pattern.images[0]}" width="1254" height="1254" loading="lazy" decoding="async" alt="${pattern.title} wallpaper wastebasket" />
+          <img src="${pattern.images[0]}" width="1254" height="1254" loading="lazy" decoding="async" alt="${pattern.name} leftover wallpaper look" />
           <span class="round-index">${pattern.index}</span>
         </div>
         <div class="color-name">
           <span>${pattern.name.toUpperCase()}</span>
-          <b>${formatPrice(pattern.price || shop.price)} / ${pattern.style.toUpperCase()} ↗</b>
+          <b>View look</b>
         </div>
       </a>`
     )
@@ -37,10 +36,3 @@ if (igStrip) {
   ];
   igStrip.innerHTML = frames.map((frame, index) => instagramFrame(frame.src, frame.alt, index)).join('');
 }
-
-document.addEventListener('click', (event) => {
-  const add = event.target.closest('[data-add]');
-  if (!add) return;
-  addToCart(add.dataset.add);
-  add.textContent = 'ADDED';
-});
