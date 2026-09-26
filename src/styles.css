@@ -111,6 +111,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .release h2 { margin: 1.5rem 0 2rem; font: 900 clamp(4.2rem,10vw,11rem)/.72 "Archivo Black", sans-serif; letter-spacing: -.09em; }
 .release h2 em { color: var(--rose); font-style: normal; -webkit-text-stroke: 1.5px var(--ink); }
 .release > p { max-width: 34rem; margin: 0 auto; font-size: 1.1rem; font-weight: 600; }
+.release-cta { margin: 2.5rem auto 0; min-width: min(22rem, 100%); }
 .release-bar { max-width: 680px; min-height: 62px; margin: 2.5rem auto 0; display: grid; grid-template-columns: 1fr auto; align-items: center; border: var(--line); background: var(--white); text-align: left; font: 500 .7rem "DM Mono", monospace; }
 .release-bar span { padding: 1rem; }
 .release-bar strong { align-self: stretch; padding: 1rem 1.5rem; display: grid; place-items: center; background: var(--ink); color: var(--white); }
@@ -407,7 +408,7 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .pdp-howto { padding: 2.2rem 1.1rem; }
   .cover-label { left: 1rem; bottom: auto; top: calc(56svh - 4.2rem); }
   .drop-intro, .pdp-intro, .shop-intro, .shop-note, .pdp-photo-suite > header { grid-template-columns: 1fr; padding: 3rem 1.1rem; }
-  .shop-note .solid-btn { width: 100%; }
+  .shop-note .solid-btn, .release-cta { width: 100%; }
   .color-run, .shop-grid, .pdp-gallery, .pdp-palette > div { grid-template-columns: 1fr; }
   .shop-grid { margin: 1rem; box-shadow: 8px 8px 0 var(--ink); }
   .shop-card:nth-child(2n) { border-right: 0; }
