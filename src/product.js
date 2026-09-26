@@ -44,7 +44,7 @@ const gallery = product.images
   .map(
     (src, index) => `<figure>
       <img src="${src}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'} alt="${product.title} view ${index + 1}" />
-      <figcaption>${index === 0 ? 'LOOK / MATCH THE WALL' : 'PAPER / TEMPLATE / KIT'}</figcaption>
+      <figcaption>${index === 0 ? 'Look / match the wall' : 'Paper / template / kit'}</figcaption>
     </figure>`
   )
   .join('');
@@ -53,8 +53,8 @@ if (root) {
   root.innerHTML = `
     <section class="pdp-cover">
       <div class="pdp-title">
-        <p class="utility">${product.style.toUpperCase()} / LOOK ${product.index}</p>
-        <h1>${product.name.toUpperCase()}</h1>
+        <p class="utility">${product.style} / Look ${product.index}</p>
+        <h1>${product.name}</h1>
         <p>${product.story}</p>
         <div class="pdp-actions">
           <a class="solid-btn" href="${etsy}" target="_blank" rel="noopener">${buyLabel}</a>
@@ -64,11 +64,11 @@ if (root) {
       </div>
       <figure class="pdp-product-stage">
         <img class="pdp-cover-image" src="${product.images[0]}" width="1254" height="1254" fetchpriority="high" alt="${product.title} matching the wall" />
-        <figcaption>${product.mood.toUpperCase()} / ${(product.rooms || []).join(' · ').toUpperCase()}</figcaption>
+        <figcaption>${product.mood} / ${(product.rooms || []).join(' · ')}</figcaption>
       </figure>
       <div class="pdp-float">
-        <span>THE FOREVER CAN / THIS LOOK</span>
-        <b>${formatPrice(price)} <small>ONE CAN</small></b>
+        <span>The Forever Can / this look</span>
+        <b>${formatPrice(price)} <small>One can</small></b>
         <em>Checkout opens the live Etsy listing. Pick nickel or gold insert there.</em>
         <a class="solid-btn" href="${etsy}" target="_blank" rel="noopener">${buyLabel}</a>
         <div class="pdp-float-links">
@@ -93,13 +93,13 @@ if (root) {
     </section>
     <section class="pdp-intro">
       <p class="utility">LEFTOVER PAPER / ${shop.patent}</p>
-      <h2>${product.story.toUpperCase()}</h2>
+      <h2>${product.story}</h2>
       <p>${product.longDescription}</p>
     </section>
     <section class="pdp-photo-suite" id="gallery">
       <header>
         <p class="utility">THE LOOK</p>
-        <h2>SAME CAN.<br /><span>THIS PAPER.</span></h2>
+        <h2>Same can.<br /><span>This paper.</span></h2>
         <p>${product.description}</p>
       </header>
       <div class="pdp-gallery">${gallery}</div>
@@ -107,7 +107,7 @@ if (root) {
     <section class="howto-band pdp-howto" id="howto">
       <header>
         <p class="utility">HOW IT WORKS</p>
-        <h2>FOUR STEPS.<br />NO GLUE.</h2>
+        <h2>Four steps.<br />No glue.</h2>
         <a class="ghost-btn" href="/how-it-works/">Full how-to</a>
       </header>
       <div class="how-steps how-steps-compact">${howStepsMarkup(howItWorks, { diagrams: false })}</div>
@@ -115,7 +115,7 @@ if (root) {
     <section class="pdp-specs" id="specs">
       <div class="spec-lead">
         <p class="utility">LOOK ${product.index}</p>
-        <h2>THE<br />KIT.</h2>
+        <h2>The<br />kit.</h2>
         <p>One patented can. Nickel or gold insert chosen on Etsy. This page is the wallpaper look.</p>
       </div>
       <dl>
@@ -136,7 +136,7 @@ if (root) {
     </section>
     <section class="pdp-release">
       <p class="utility">YOUR FOREVER CAN</p>
-      <h2>${formatPrice(price)}<br /><em>KEEP THE CAN.</em></h2>
+      <h2>${formatPrice(price)}<br /><em>Keep the can.</em></h2>
       <p>Checkout opens the live WallpaperWastebasket listing. Choose nickel or gold insert there.</p>
       <div class="pdp-release-links">
         <a class="solid-btn" href="${etsy}" target="_blank" rel="noopener">${buyLabel}</a>
@@ -145,8 +145,8 @@ if (root) {
       </div>
     </section>
     <a class="next-color" href="${productUrl(next.slug)}" style="--next-light:${next.colors[0]};--next-dark:${next.colors[1]}">
-      <span>NEXT LOOK / ${next.index}</span>
-      <strong>${next.name.toUpperCase()}</strong>
+      <span>Next look / ${next.index}</span>
+      <strong>${next.name}</strong>
       <b>View</b>
     </a>`;
 }

@@ -4,17 +4,20 @@ Adapted from the editorial ecommerce language of `smxlventures-create/toala-towe
 
 ## Direction
 
-Bold editorial ecommerce: oversized type, hard black rules, deliberate color blocking. Lead with **match-the-wall photography** and the DIY template — not a towel-style grid of fake SKUs.
+Photo-led editorial ecommerce: hard black rules, deliberate color blocking, quiet type. Lead with **match-the-wall photography** and the DIY template — not a towel-style grid of fake SKUs, and not a loud DTC / streetwear sans.
 
 The first screen must say the product: leftover wallpaper from the wall wraps the can so the trash can matches the room.
 
 ## Typography
 
-- Display: Archivo Black
-- Body: Space Grotesk
-- Utility labels: DM Mono
+High-end European wallpaper house — not Archivo Black, not monospace.
 
-Headlines stay huge, slightly skewed in the hero, and break aggressively. Labels stay mono and uppercase.
+- Display / headlines: **Cormorant Garamond** (600, italic for emphasis). Title or sentence case. Generous line-height (~1.08–1.12), almost no negative tracking.
+- Body: **Manrope** at ≥16px / 1.65. Soft humanist sans so long copy stays readable on mobile.
+- UI / buttons / nav: **Manrope** 500, sentence case, quiet. No monospace.
+- Small labels only (ticker, `.utility`): uppercase Manrope at 500 with ~0.16em letter-spacing.
+
+Headlines should not shout over the wallpaper photos. If a label stays in caps, it is small, lighter, and tracked out.
 
 ## Palette
 

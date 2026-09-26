@@ -91,7 +91,7 @@ document.querySelectorAll('.site-footer nav').forEach((nav) => {
   ];
   nav.innerHTML = footer
     .map(({ href, label, external }) => {
-      return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label.toUpperCase()}</a>`;
+      return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
     })
     .join('');
 });

@@ -26,7 +26,7 @@
       <path d="M230 70 L410 70 L390 320 L250 320 Z" fill="none" stroke="#0d0d12" stroke-width="4"/>
       <path d="M250 90 L390 90 L374 300 L266 300 Z" fill="url(#p)" stroke="#0d0d12" stroke-width="2"/>
       <ellipse cx="320" cy="70" rx="90" ry="22" fill="#d7d3cc" stroke="#0d0d12" stroke-width="3"/>
-      <text x="40" y="384" font-family="Archivo Black, sans-serif" font-size="32">CUT. OVERLAP. DROP.</text>
+      <text x="40" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Cut. Overlap. Drop.</text>
     
 
 </svg>

@@ -27,7 +27,7 @@
       <rect x="110" y="80" width="200" height="180" fill="none" stroke="#0d0d12" stroke-width="3" stroke-dasharray="8 6"/>
       <path d="M320 250 L390 310" stroke="#0d0d12" stroke-width="4"/>
       <circle cx="400" cy="322" r="10" fill="#0d0d12"/>
-      <text x="70" y="384" font-family="Archivo Black, sans-serif" font-size="36">TRACE THE TEMPLATE.</text>
+      <text x="70" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Trace the template.</text>
     
 
 </svg>

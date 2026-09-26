@@ -21,7 +21,7 @@ export function howStepsMarkup(steps, { diagrams = true } = {}) {
         }
         <b>${step.n}</b>
         <div>
-          <h3>${escapeHtml(step.title.toUpperCase())}</h3>
+          <h3>${escapeHtml(step.title)}</h3>
           <p>${escapeHtml(step.body)}</p>
         </div>
       </article>`
@@ -38,8 +38,8 @@ export function patternCard(pattern) {
       <i class="pattern-swatch" style="background-image:url('${pattern.patternTile}')" aria-hidden="true"></i>
     </a>
     <div class="shop-card-copy">
-      <p class="utility">${pattern.style.toUpperCase()} · ${escapeHtml(roomsOf(pattern).toUpperCase())}</p>
-      <h2>${escapeHtml(name.toUpperCase())}</h2>
+      <p class="utility">${pattern.style} · ${escapeHtml(roomsOf(pattern))}</p>
+      <h2>${escapeHtml(name)}</h2>
       <p>${escapeHtml(pattern.story)}</p>
       <div class="shop-card-buy">
         <strong>${formatPrice(pattern.price || shop.price)}</strong>
@@ -53,7 +53,7 @@ export function patternCard(pattern) {
 export function shopEmptyState(styleLabel) {
   return `<div class="shop-empty" role="status">
     <p class="utility">NO MATCHES</p>
-    <h2>NO ${escapeHtml((styleLabel || 'LOOKS').toUpperCase())} LOOKS.</h2>
+    <h2>No ${escapeHtml((styleLabel || 'looks').toLowerCase())} looks.</h2>
     <p>These chips group leftover-wallpaper styles. Reset to see every Forever Can look, then pick another filter.</p>
     <button type="button" class="solid-btn" data-reset-filter>Show all looks</button>
   </div>`;

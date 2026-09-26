@@ -13,7 +13,7 @@ if (featured) {
           <span class="round-index">${pattern.index}</span>
         </div>
         <div class="color-name">
-          <span>${pattern.name.toUpperCase()}</span>
+          <span>${pattern.name}</span>
           <b>View look</b>
         </div>
       </a>`

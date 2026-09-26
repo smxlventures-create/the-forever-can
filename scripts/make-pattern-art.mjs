@@ -225,11 +225,11 @@ function lookCard(pattern) {
     <ellipse cx="140" cy="90" rx="116" ry="36" fill="${dark}" stroke="#0d0d12" stroke-width="3"/>
     <ellipse cx="140" cy="90" rx="88" ry="24" fill="#d7d3cc"/>
     <ellipse cx="140" cy="90" rx="70" ry="18" fill="#8a8f96"/>
-    <text x="140" y="690" text-anchor="middle" fill="#0d0d12" font-family="Archivo Black, Impact, sans-serif" font-size="28" letter-spacing="-1">FOREVER CAN</text>
-    <text x="140" y="722" text-anchor="middle" fill="#0d0d12" font-family="ui-monospace, monospace" font-size="16">IN ${pattern.name.toUpperCase()}</text>
+    <text x="140" y="690" text-anchor="middle" fill="#0d0d12" font-family="Georgia, Times New Roman, serif" font-size="28" letter-spacing="0">Forever Can</text>
+    <text x="140" y="722" text-anchor="middle" fill="#0d0d12" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">in ${pattern.name}</text>
   </g>
   <rect x="36" y="36" width="828" height="54" fill="#fffdf8" stroke="#0d0d12" stroke-width="2"/>
-  <text x="56" y="72" font-family="ui-monospace, monospace" font-size="18" fill="#0d0d12">${pattern.index}  /  ${pattern.style.toUpperCase()}  /  MATCH THE WALL</text>
+  <text x="56" y="72" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" fill="#0d0d12">${pattern.index}  /  ${pattern.style}  /  Match the wall</text>
 `
   );
 }
@@ -241,7 +241,7 @@ function stepDiagram(kind) {
       <rect x="40" y="36" width="360" height="300" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
       <rect x="430" y="220" width="150" height="22" fill="#eee9df" stroke="#0d0d12" stroke-width="2"/>
       <ellipse cx="430" cy="231" rx="16" ry="20" fill="#c45a7a" stroke="#0d0d12" stroke-width="2"/>
-      <text x="40" y="384" font-family="Archivo Black, sans-serif" font-size="36">HANG. KEEP THE SCRAPS.</text>
+      <text x="40" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Hang. Keep the scraps.</text>
     `,
     trace: `
       <rect width="640" height="420" fill="#ffd84d"/>
@@ -249,21 +249,21 @@ function stepDiagram(kind) {
       <rect x="110" y="80" width="200" height="180" fill="none" stroke="#0d0d12" stroke-width="3" stroke-dasharray="8 6"/>
       <path d="M320 250 L390 310" stroke="#0d0d12" stroke-width="4"/>
       <circle cx="400" cy="322" r="10" fill="#0d0d12"/>
-      <text x="70" y="384" font-family="Archivo Black, sans-serif" font-size="36">TRACE THE TEMPLATE.</text>
+      <text x="70" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Trace the template.</text>
     `,
     drop: `
       <rect width="640" height="420" fill="#c7b5ff"/>
       <path d="M230 70 L410 70 L390 320 L250 320 Z" fill="none" stroke="#0d0d12" stroke-width="4"/>
       <path d="M250 90 L390 90 L374 300 L266 300 Z" fill="url(#p)" stroke="#0d0d12" stroke-width="2"/>
       <ellipse cx="320" cy="70" rx="90" ry="22" fill="#d7d3cc" stroke="#0d0d12" stroke-width="3"/>
-      <text x="40" y="384" font-family="Archivo Black, sans-serif" font-size="32">CUT. OVERLAP. DROP.</text>
+      <text x="40" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Cut. Overlap. Drop.</text>
     `,
     match: `
       <rect width="640" height="420" fill="#d7e4d6"/>
       <rect x="40" y="30" width="560" height="280" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
       <path d="M250 90 L390 90 L376 270 L264 270 Z" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
       <ellipse cx="320" cy="90" rx="72" ry="16" fill="#8a8f96" stroke="#0d0d12" stroke-width="3"/>
-      <text x="40" y="384" font-family="Archivo Black, sans-serif" font-size="32">NOW IT MATCHES. SWAP LATER.</text>
+      <text x="40" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Now it matches. Swap later.</text>
     `
   };
   return svg(
