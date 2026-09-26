@@ -404,6 +404,8 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .path-strip li, .path-strip a { min-height: 0; padding: .85rem .7rem; }
   .path-strip small { display: none; }
   .home-page .header-buy, .shop-page .header-buy, .product-page .header-buy, .howto-page .header-buy { display: none; }
+  .sticky-buy { position: fixed; left: 0; right: 0; bottom: 0; }
+  .home-page main, .shop-page main, .howto-page main, .product-page #product-root { padding-bottom: 5.25rem; }
   .collection-copy .solid-btn { width: 100%; }
   .howto-band > header p:last-of-type, .pattern-teaser header p:last-of-type, .shop-hero-copy p:last-of-type, .story-hero p:last-of-type { font-size: 1.08rem; line-height: 1.45; }
   .shop-card-image { height: min(88vw, 460px); }
