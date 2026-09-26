@@ -75,25 +75,25 @@ for (const product of catalog.patterns) {
     <link rel="preload" as="image" href="${product.images[0]}" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=DM+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
     <script type="module" src="/src/product.js"></script>
   </head>
   <body class="product-page" data-product="${product.slug}">
     <a class="skip" href="#product-root">Skip to product</a>
-    <div class="ticker"><div><span>${title.toUpperCase()}</span><i>✦</i><span>$${catalog.shop.price}</span><i>✦</i><span>${product.style.toUpperCase()}</span><i>✦</i><span>THE FOREVER CAN</span></div></div>
+    <div class="ticker"><div><span>${title}</span><i>✦</i><span>$${catalog.shop.price}</span><i>✦</i><span>${product.style}</span><i>✦</i><span>The Forever Can</span></div></div>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="The Forever Can home"><img src="/forever-mark.svg" alt="" /><b>THE<br />FOREVER<br />CAN</b></a>
-      <nav aria-label="Main navigation"><a href="/shop/">Shop</a><a href="/how-it-works/">How-to</a><a href="/about/">About</a><a href="/cart/">Cart</a></nav>
-      <a class="header-tag" data-cart-count href="/cart/">Cart ↗</a>
+      <a class="brand" href="/" aria-label="The Forever Can home"><img src="/forever-mark.svg" alt="" /><b>The<br />Forever<br />Can</b></a>
+      <nav aria-label="Main navigation"><a href="/shop/">Shop</a><a href="/how-it-works/">How it works</a></nav>
+      <a class="header-tag header-buy" href="${catalog.shop.etsyListing}" target="_blank" rel="noopener">Open Etsy · $59.95</a>
     </header>
     <main id="product-root"></main>
     <footer class="site-footer">
       <img class="footer-mark" src="/forever-mark.svg" alt="The Forever Can mark" />
-      <p class="footer-word">FOREVER CAN</p>
+      <p class="footer-word">Forever Can</p>
       <div>
-        <p>${title.toUpperCase()} / ${product.style.toUpperCase()}</p>
+        <p>${title} / ${product.style}</p>
         <nav aria-label="Footer navigation"></nav>
-        <p>© 2026 THE FOREVER CAN</p>
+        <p>© 2026 The Forever Can</p>
       </div>
     </footer>
   </body>

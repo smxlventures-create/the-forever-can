@@ -2,7 +2,7 @@
 
 Editorial storefront for **The Forever Can** — Patti Gilley’s patented wallpaper wastebasket (`US 2024/0327113 A1`). The site sells the real product story: **use leftover wallpaper from your walls to wrap the can so the trash can matches the room.** When you redecorate, swap the paper. The can lasts forever.
 
-Visual language keeps Toala bones (Archivo Black / Space Grotesk / DM Mono, hard rules, color blocking) and is re-skinned for wallpaper craft — not a towel shop, and not a grid of fake insert-finish SKUs.
+Visual language keeps the photo-led color blocks and hard rules, but type is a European wallpaper-house pair: **Cormorant Garamond** headlines and **Manrope** body/UI — not Archivo Black / DM Mono. Not a towel shop, and not a grid of fake insert-finish SKUs.
 
 Primary Etsy listing: [The Forever Can](https://www.etsy.com/listing/1552653332/the-forever-can-wallpaper-wastebasket) in shop **WallpaperWastebasket** — $59.95 USD, 5.0 (~18 reviews), 30-day returns. Inventor: Patti Gilley. Instagram [@the_forever_can](https://www.instagram.com/the_forever_can/).
 

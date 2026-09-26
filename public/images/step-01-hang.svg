@@ -26,7 +26,7 @@
       <rect x="40" y="36" width="360" height="300" fill="url(#p)" stroke="#0d0d12" stroke-width="3"/>
       <rect x="430" y="220" width="150" height="22" fill="#eee9df" stroke="#0d0d12" stroke-width="2"/>
       <ellipse cx="430" cy="231" rx="16" ry="20" fill="#c45a7a" stroke="#0d0d12" stroke-width="2"/>
-      <text x="40" y="384" font-family="Archivo Black, sans-serif" font-size="36">HANG. KEEP THE SCRAPS.</text>
+      <text x="40" y="384" font-family="Georgia, Times New Roman, serif" font-size="32">Hang. Keep the scraps.</text>
     
 
 </svg>

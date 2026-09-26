@@ -1,23 +1,25 @@
 import { cartCount, subscribeCart } from './cart.js';
+import { shop } from './products.js';
+
+const etsy = shop.etsyListing;
+const buyLabel = 'Open Etsy · $59.95';
 
 const links = [
   { href: '/shop/', label: 'Shop' },
-  { href: '/how-it-works/', label: 'How-to' },
-  { href: '/about/', label: 'About' },
-  { href: '/cart/', label: 'Cart' }
+  { href: '/how-it-works/', label: 'How it works' }
+];
+
+const menuLinks = [
+  { href: '/shop/', label: 'Shop', hint: 'Wallpaper looks' },
+  { href: '/how-it-works/', label: 'How it works', hint: 'Four leftover-paper steps' },
+  { href: etsy, label: 'Buy on Etsy', hint: 'Opens Etsy · $59.95', external: true },
+  { href: '/about/', label: 'About', hint: 'Patti + the patent' }
 ];
 
 const currentPath = window.location.pathname;
 const header = document.querySelector('.site-header');
 
-function cartLabel(count) {
-  return count > 0 ? `Cart / ${String(count).padStart(2, '0')} ↗` : 'Cart ↗';
-}
-
 function refreshCartTags(count = cartCount()) {
-  document.querySelectorAll('[data-cart-count]').forEach((node) => {
-    node.textContent = cartLabel(count);
-  });
   const cartNav = document.querySelector('.site-nav a[href="/cart/"] span');
   if (cartNav) cartNav.textContent = count > 0 ? `Cart (${count})` : 'Cart';
 }
@@ -27,13 +29,14 @@ if (header) {
   if (nav) {
     nav.classList.add('site-nav');
     nav.id = 'site-nav';
-    nav.innerHTML = links
-      .map(({ href, label }, index) => {
+    nav.innerHTML = menuLinks
+      .map(({ href, label, hint, external }) => {
         const active =
-          currentPath === href ||
-          (href === '/shop/' && currentPath.startsWith('/products/')) ||
-          (href === '/how-it-works/' && currentPath.startsWith('/how-it-works/'));
-        return `<a href="${href}"${active ? ' aria-current="page"' : ''}><small>${String(index + 1).padStart(2, '0')}</small><span>${label}</span><i aria-hidden="true"></i></a>`;
+          !external &&
+          (currentPath === href ||
+            (href === '/shop/' && currentPath.startsWith('/products/')) ||
+            (href === '/how-it-works/' && currentPath.startsWith('/how-it-works/')));
+        return `<a href="${href}"${active ? ' aria-current="page"' : ''}${external ? ' target="_blank" rel="noopener"' : ''}><small>${hint}</small><span>${label}</span></a>`;
       })
       .join('');
   }
@@ -47,10 +50,15 @@ if (header) {
   button.innerHTML = '<span>Menu</span><b aria-hidden="true">+</b>';
   header.insertBefore(button, nav);
 
-  const shopLink = header.querySelector('.header-tag');
-  if (shopLink && !shopLink.hasAttribute('data-cart-count')) {
-    shopLink.href = '/shop/';
-    shopLink.textContent = 'Shop looks ↗';
+  const buyLink = header.querySelector('.header-tag');
+  if (buyLink) {
+    buyLink.removeAttribute('data-cart-count');
+    buyLink.classList.add('header-buy');
+    buyLink.href = etsy;
+    buyLink.target = '_blank';
+    buyLink.rel = 'noopener';
+    buyLink.setAttribute('aria-label', 'Open the live Etsy listing — $59.95');
+    buyLink.innerHTML = `<span class="buy-full">${buyLabel}</span><span class="buy-short">Etsy · $59.95</span>`;
   }
 
   const setMenu = (open, returnFocus = false) => {
@@ -77,13 +85,13 @@ if (header) {
 document.querySelectorAll('.site-footer nav').forEach((nav) => {
   const footer = [
     ...links,
-    { href: '/contact/', label: 'Contact' },
-    { href: 'https://www.instagram.com/the_forever_can/', label: 'Instagram' }
+    { href: etsy, label: 'Buy on Etsy', external: true },
+    { href: '/about/', label: 'About' },
+    { href: '/contact/', label: 'Contact' }
   ];
   nav.innerHTML = footer
-    .map(({ href, label }) => {
-      const external = href.startsWith('http');
-      return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label.toUpperCase()}</a>`;
+    .map(({ href, label, external }) => {
+      return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
     })
     .join('');
 });
