@@ -39,6 +39,11 @@ function render() {
   chips?.querySelectorAll('[data-style]').forEach((chip) => {
     chip.setAttribute('aria-pressed', String(chip.dataset.style === active));
   });
+  const pressed = chips?.querySelector('[aria-pressed="true"]');
+  if (pressed && chips) {
+    const left = pressed.offsetLeft - chips.clientWidth / 2 + pressed.clientWidth / 2;
+    chips.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+  }
 }
 
 if (chips) {

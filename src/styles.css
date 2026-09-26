@@ -291,6 +291,7 @@ figcaption { padding-top: .7rem; font: 600 .8125rem/1.35 var(--font-ui); color: 
 .filter-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .chip { min-height: 46px; padding: 0 1rem; border: var(--line); background: var(--white); font: 600 .8125rem var(--font-ui); text-transform: none; cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.chip[aria-pressed="true"]:focus-visible { outline-color: var(--ink); }
 .shop-empty { grid-column: 1 / -1; min-height: 320px; padding: 2.5rem 1.4rem; display: grid; gap: 1rem; align-content: center; background: var(--sun); }
 .shop-empty h2 { font: 600 clamp(2rem,5vw,3.6rem)/1.08 var(--font-display); letter-spacing: -.015em; }
 .shop-empty p:not(.utility) { max-width: 32rem; font-weight: 400; line-height: 1.65; }
@@ -405,7 +406,12 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .cover-type h1, .match-hero-copy h1, .shop-hero h1, .story-hero h1, .page-hero h1, .pdp-title h1 { font-size: clamp(2.4rem,11vw,3.6rem); }
   .howto-band > header, .pattern-teaser header, .ig-band header { grid-template-columns: 1fr; padding-left: 1.1rem; padding-right: 1.1rem; }
   .how-steps, .howto-kit, .ig-strip { grid-template-columns: 1fr 1fr; }
-  .filter-bar { padding: .75rem 1rem; top: 63px; }
+  .filter-bar { padding: .45rem 0 .45rem .75rem; gap: 0; top: 63px; }
+  .filter-head { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .filter-chips { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; gap: .4rem; padding: 0 1rem 0 0; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .filter-chips::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; min-height: 40px; padding: 0 .85rem; }
+  .shop-grid { scroll-margin-top: 7.25rem; }
   .path-strip ol { grid-template-columns: repeat(4,1fr); }
   .path-strip li, .path-strip a { min-height: 0; padding: .85rem .7rem; }
   .path-strip small { display: none; }
