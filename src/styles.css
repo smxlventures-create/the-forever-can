@@ -222,13 +222,13 @@ figcaption { padding-top: .7rem; font: 500 .65rem "DM Mono", monospace; color: v
 .match-hero { display: grid; grid-template-columns: 58% 42%; min-height: calc(100svh - 104px); border-bottom: var(--line); background: var(--pink); }
 .match-hero-photo { position: relative; min-height: 62svh; margin: 0; background: var(--ink); }
 .match-hero-photo img { height: 100%; object-fit: cover; object-position: 12% 78%; }
-.match-hero-photo figcaption { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; padding: .75rem .85rem; display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; background: var(--white); border: var(--line); font: 500 .62rem "DM Mono", monospace; color: var(--ink); }
-.match-hero-photo figcaption b { text-align: center; }
-.match-hero-copy { padding: clamp(2rem,5vw,6rem) clamp(1.1rem,4vw,4rem); display: flex; flex-direction: column; justify-content: center; }
-.match-hero-copy h1 { margin: 1rem 0 1.4rem; font: 900 clamp(3.2rem,8vw,7.2rem)/.78 "Archivo Black", sans-serif; letter-spacing: -.08em; transform: skewX(-3deg); }
+.match-hero-photo figcaption { position: absolute; left: 1rem; right: auto; bottom: 1rem; padding: .7rem .9rem; background: var(--white); border: var(--line); font: 500 .62rem "DM Mono", monospace; color: var(--ink); }
+.match-hero-copy { padding: clamp(2.2rem,5vw,6rem) clamp(1.2rem,4vw,4rem); display: flex; flex-direction: column; justify-content: center; }
+.match-hero-copy h1 { margin: 0 0 .85rem; font: 900 clamp(3rem,7.4vw,6.6rem)/.78 "Archivo Black", sans-serif; letter-spacing: -.08em; transform: skewX(-3deg); }
 .match-hero-copy h1 em { color: var(--white); font-style: normal; -webkit-text-stroke: 1.5px var(--ink); }
-.hero-actions { display: grid; grid-template-columns: 1fr; gap: .6rem; margin-top: 1.6rem; max-width: 22rem; }
-.hero-actions .solid-btn, .hero-actions .ghost-btn { width: 100%; }
+.match-hero-copy .cover-note { margin: 0; max-width: 22rem; }
+.hero-actions { display: grid; justify-items: start; gap: .85rem; margin-top: 1.8rem; max-width: 22rem; }
+.hero-actions .solid-btn { width: 100%; }
 .collection-copy .solid-btn { margin-top: 2rem; width: max-content; min-width: 16rem; }
 
 .path-strip { border-bottom: var(--line); background: var(--white); }
@@ -394,14 +394,16 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .brand { width: var(--wordmark-header-width-mobile); }
   .home-cover, .match-hero, .shop-hero, .story-hero, .pdp-cover, .collection-shot, .flip-story, .about-split, .contact-grid, .cart-checkout, .pdp-specs, .cart-hero { grid-template-columns: 1fr; min-height: 0; height: auto; }
   .cover-image, .match-hero-photo, .shop-hero figure, .story-hero figure, .collection-shot figure, .about-split figure { min-height: 42svh; border-right: 0; border-bottom: var(--line); overflow: hidden; }
-  .cover-type, .match-hero-copy, .shop-hero-copy, .story-hero > div, .pdp-title { padding: 1.6rem 1.1rem 2.2rem; border-right: 0; }
+  .cover-type, .shop-hero-copy, .story-hero > div, .pdp-title { padding: 1.6rem 1.1rem 2.2rem; border-right: 0; }
+  .match-hero-copy { padding: 2rem 1.25rem 2.4rem; border-right: 0; }
   .cover-type h1, .match-hero-copy h1, .shop-hero h1, .story-hero h1, .page-hero h1, .pdp-title h1 { font-size: clamp(2.8rem,13vw,5rem); }
   .howto-band > header, .pattern-teaser header, .ig-band header { grid-template-columns: 1fr; padding-left: 1.1rem; padding-right: 1.1rem; }
   .how-steps, .howto-kit, .ig-strip { grid-template-columns: 1fr 1fr; }
   .filter-bar { padding: .75rem 1rem; top: 63px; }
-  .path-strip ol { grid-template-columns: 1fr 1fr; }
-  .path-strip li:nth-child(2n) { border-right: 0; }
-  .path-strip li:nth-child(-n+2) { border-bottom: var(--line); }
+  .path-strip ol { grid-template-columns: repeat(4,1fr); }
+  .path-strip li, .path-strip a { min-height: 0; padding: .85rem .7rem; }
+  .path-strip small { display: none; }
+  .home-page .header-buy, .shop-page .header-buy, .product-page .header-buy, .howto-page .header-buy { display: none; }
   .collection-copy .solid-btn { width: 100%; }
   .howto-band > header p:last-of-type, .pattern-teaser header p:last-of-type, .shop-hero-copy p:last-of-type, .story-hero p:last-of-type { font-size: 1.08rem; line-height: 1.45; }
   .shop-card-image { height: min(88vw, 460px); }
@@ -430,18 +432,16 @@ input, textarea { width: 100%; border: var(--line); background: var(--white); pa
   .header-tag { padding: .55rem .7rem; font-size: .62rem; }
   .facts, .shop-strip, .how-steps, .howto-kit, .ig-strip, .hero-actions { grid-template-columns: 1fr; }
   .facts div, .shop-strip div, .howto-kit article { border-right: 0; border-bottom: var(--line); }
-  .path-strip ol { grid-template-columns: 1fr; }
-  .path-strip li { border-right: 0; border-bottom: var(--line); min-height: 0; }
-  .path-strip li:last-child { border-bottom: 0; }
-  .path-strip li, .path-strip a { min-height: 0; padding: .95rem 1rem; }
+  .path-strip { display: none; }
   .match-hero { min-height: 0; }
-  .match-hero-photo { height: 30svh; min-height: 30svh; max-height: 30svh; overflow: hidden; }
-  .match-hero-photo img { height: 30svh; }
-  .match-hero-photo figcaption { grid-template-columns: 1fr auto; gap: .35rem; left: .7rem; right: .7rem; bottom: .55rem; }
-  .match-hero-copy { padding: 1rem 1rem 1.15rem; }
-  .match-hero-copy h1 { margin: .4rem 0 .65rem; font-size: clamp(2.4rem, 14vw, 3.2rem); }
+  .match-hero-photo { height: 46svh; min-height: 46svh; max-height: 46svh; overflow: hidden; }
+  .match-hero-photo img { height: 46svh; }
+  .match-hero-photo figcaption { left: .85rem; right: auto; bottom: .85rem; }
+  .match-hero-copy { padding: 1.6rem 1.2rem 1.8rem; gap: 0; }
+  .match-hero-copy h1 { margin: 0 0 .7rem; font-size: clamp(2.6rem, 13vw, 3.4rem); }
+  .match-hero-copy .cover-note { font-size: 1.15rem; line-height: 1.4; }
   .cover-note, .shop-hero-copy p:last-of-type, .story-hero p:last-of-type, .howto-band > header p:last-of-type, .collection-copy > p:last-of-type { font-size: 1.12rem; line-height: 1.42; }
-  .hero-actions { margin-top: 1rem; max-width: none; }
+  .hero-actions { margin-top: 1.35rem; max-width: none; gap: 1rem; }
   .leftover-roll { top: .7rem; right: .7rem; width: 78px; }
   .ig-strip { grid-template-columns: 1fr 1fr; }
   .sticky-buy { padding-left: .75rem; padding-right: .75rem; }
